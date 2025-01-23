@@ -1,10 +1,13 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+
+import AuthProvider from "../context/AuthProvider"
+
 config.autoAddCss = false
 
 const font = Figtree({ subsets: ["latin"]});
@@ -27,13 +30,13 @@ export default function RootLayout({
       >
 
           {/* <div className="absolute bottom-0 left-[-10%] top-[0%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))] "></div> */}
-
-          <Header/>
-          <div className="h-full">
-            {children}
-          </div>
-          <Footer />
-
+          <AuthProvider>
+            <Header/>
+            <div className="h-full">
+              {children}
+            </div>
+            <Footer />
+          </AuthProvider>
       </body>
     </html>
   )
