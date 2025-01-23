@@ -20,11 +20,11 @@ export default function DashboardLayout({
  
   return (
     <>
-      <div>
-          <div>{toptracks}</div>
-          <div>{topartists}</div>
-          <div>{recommendedartists}</div>
-          <div>{recommendedtracks}</div>
+      <div className="h-full grid grid-cols-2 gap-2">
+          {toptracks}
+          {topartists}
+          {recommendedartists}
+          {recommendedtracks}
       </div>
 
     </>

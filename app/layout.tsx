@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
 
 import AuthProvider from "../context/AuthProvider"
 
@@ -26,19 +27,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} antialiased h-screen w-full flex flex-col justify-between bg-slate-950 text-white relative`}
+        className={`${font.className} h-screen antialiased bg-slate-950 text-white relative`}
       >
+          <div className="absolute z-[-10] bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
 
-          {/* <div className="absolute bottom-0 left-[-10%] top-[0%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))] "></div> */}
-          <AuthProvider>
-            <Header/>
-            <div className="h-full">
+          <div className="h-full w-2/3 mx-auto flex flex-col justify-between"> 
+            <AuthProvider>
+              <Header/>
               {children}
-            </div>
-            <Footer />
-          </AuthProvider>
+              <Footer />
+            </AuthProvider>
+          </div>
       </body>
     </html>
   )
 }
-

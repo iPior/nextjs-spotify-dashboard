@@ -1,12 +1,15 @@
+"use client"
+
 import React from 'react'
 import { Button } from "@/components/ui/button"
+import { signOut } from 'next-auth/react'
 
 
 export default function Header() {
   return (
-    <header className='flex justify-between p-4'>
+    <header className='flex justify-between py-4'>
       <h1></h1>
-      <Button>Click me</Button>
+      <Button onClick={() => signOut({ callbackUrl: '/' })}>Sign out</Button>
     </header>
   )
 }

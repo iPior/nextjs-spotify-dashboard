@@ -20,7 +20,6 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token, account }) {
       // Persist the OAuth access_token to the token right after signin
       if (account) {
-        token.id = account.id;
         token.expires_at = account.expires_at;
         token.accessToken = account.access_token;
         token.refreshToken = account.refresh_token;
@@ -34,16 +33,9 @@ export const authOptions: NextAuthOptions = {
         token
       }
     },
-    async redirect({ url, baseUrl }) {
-      // Allows relative callback URLs
-      if (url.startsWith("/")) return `${baseUrl}${url}`
-      // Allows callback URLs on the same origin
-      else if (new URL(url).origin === baseUrl) return url
-      return baseUrl
-    }
   },
   pages: {
-    signIn: '/'
+    signIn: '/',
   }
 
 }
