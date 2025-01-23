@@ -5,7 +5,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
-import { BackgroundGradientAnimation } from "../components/ui/background-gradient-animation";
 
 import AuthProvider from "../context/AuthProvider"
 
