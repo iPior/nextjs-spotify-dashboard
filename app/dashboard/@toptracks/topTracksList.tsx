@@ -5,7 +5,7 @@ export default function TopTracksList(tracks: Array<SpotifyTrack>) {
 
   return (
     <div
-      className="flex flex-col w-full overflow-hidden"
+      className="h-5/6 flex flex-col w-full overflow-y-scroll"
     >
       {tracks.map((track, index) => (
         <TrackCard

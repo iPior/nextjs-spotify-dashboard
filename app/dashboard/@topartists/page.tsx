@@ -16,10 +16,13 @@ export default async function TopArtists() {
 
     return (
     <div
-      className='h-1/2 w-1/2 p-2 overflow-y-scroll bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'
+      className='h-1/2 w-1/2 p-4 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'
     >
-      <h1 className="relative">Top Artists in the past 3 months</h1>
-      {TopArtistsList(artists)}
+      <div className="h-1/6 px-1">
+        <h1 className="text-4xl font-bold"> Top Artists </h1>
+        <p className="text-sm">Past 3 months</p>
+      </div>
+        {TopArtistsList(artists)}
     </div>
   )
 }
