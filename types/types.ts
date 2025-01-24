@@ -20,6 +20,8 @@ export interface SpotifyArtist{
 }
 
 export interface cardProps {
+  className?: string;
+  index?: number;
   image: string;
   name: string;
 }

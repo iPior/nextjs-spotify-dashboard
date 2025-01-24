@@ -20,13 +20,16 @@ export default function DashboardLayout({
  
   return (
     <>
-      <div className="h-full grid grid-cols-2 gap-2">
+      <div 
+        // className="grid grid-cols-2 gap-2 overflow-hidden"
+
+        className="h-full flex flex-wrap flex-col w-full"
+      >
           {toptracks}
+          {recommendedtracks}
           {topartists}
           {recommendedartists}
-          {recommendedtracks}
       </div>
-
     </>
   );
 }
