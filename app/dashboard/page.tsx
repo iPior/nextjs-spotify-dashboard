@@ -4,7 +4,6 @@ import { redirect } from "next/navigation"
 
 export default async function Dashboard() {
   const session = await getServerSession(authOptions)
-  // console.log(session?.user?.accessToken)
 
   if (!session) {
       redirect('/') 
@@ -12,7 +11,7 @@ export default async function Dashboard() {
 
   return (
     <div>
-      <h1>geeas</h1>
+      <h1>DASHBOARD</h1>
     </div>
   );
 }
