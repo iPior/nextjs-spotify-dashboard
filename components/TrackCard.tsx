@@ -1,15 +1,16 @@
 import { cardProps } from "@/types/types"
-import Image from 'next/image'
 
-export default function ArtistCard({
+export default function TrackCard({
   className,
   index,
   image,
   name,
+  artist,
 }:  cardProps){
   return (
     <div className={className}>
       <h1>{index}</h1> 
+      
       <img 
         src={image}
         alt={`Profile picture of ${name}`}
@@ -18,10 +19,11 @@ export default function ArtistCard({
       <div
         className=""
       >
-        <h2>{name}</h2>
+        <h2
+          className="text-xl"
+        >{name}</h2>
+        <h2>{artist}</h2>
       </div>
     </div>
   )
-
-
 }
