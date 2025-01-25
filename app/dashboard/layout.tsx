@@ -7,11 +7,15 @@ import React from "react";
 // };
 
 export default function DashboardLayout({
+  profile,
+  newreleases,
   toptracks,
   topartists,
   recommendedartists,
   recommendedtracks,
 }: {
+  profile: React.ReactNode;
+  newreleases: React.ReactNode;
   toptracks: React.ReactNode;
   topartists: React.ReactNode;
   recommendedartists: React.ReactNode;
@@ -21,14 +25,14 @@ export default function DashboardLayout({
   return (
     <>
       <div 
-        // className="grid grid-cols-2 gap-2 overflow-hidden"
-
-        className="h-full flex flex-wrap flex-col w-full"
+        className="h-full flex flex-wrap flex-row w-full"
       >
+          {profile}
+          {newreleases}
           {toptracks}
-          {recommendedtracks}
           {topartists}
-          {recommendedartists}
+          {recommendedtracks}
+          {/* {recommendedartists} */}
       </div>
     </>
   );
