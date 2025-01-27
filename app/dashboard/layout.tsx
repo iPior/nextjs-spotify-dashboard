@@ -8,14 +8,14 @@ import React from "react";
 
 export default function DashboardLayout({
   profile,
-  newreleases,
+  recentlyplayed,
   toptracks,
   topartists,
   recommendedartists,
   recommendedtracks,
 }: {
   profile: React.ReactNode;
-  newreleases: React.ReactNode;
+  recentlyplayed: React.ReactNode;
   toptracks: React.ReactNode;
   topartists: React.ReactNode;
   recommendedartists: React.ReactNode;
@@ -28,7 +28,7 @@ export default function DashboardLayout({
         className="h-full flex flex-wrap flex-row w-full"
       >
           {profile}
-          {newreleases}
+          {recentlyplayed}
           {toptracks}
           {topartists}
           {recommendedtracks}

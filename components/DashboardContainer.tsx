@@ -5,7 +5,7 @@ export default function DashboardContainer({
   }>) {
     return (
         <div
-          className='h-full p-4 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'
+          className='h-full w-full p-4 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'
         >
             {children}
         </div>
