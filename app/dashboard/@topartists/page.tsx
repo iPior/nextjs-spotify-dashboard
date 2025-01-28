@@ -18,12 +18,9 @@ export default async function TopArtists() {
     return (
     <div className="h-1/2 w-1/2 p-2">
       <DashboardContainer>
-        <div className="h-1/6 px-1 flex justify-between">
-          <div>
-            <h1 className="text-4xl font-bold"> Top Artists </h1>
-            <p className="text-sm">Past 3 months</p>
-          </div>
-          <div className="text-xs h-full">
+        <div className="mb-4 px-1 flex justify-between items-center">
+          <h1 className="text-4xl font-bold"> Top Artists </h1>
+          <div className="text-xs h-full flex items-center">
               <button className="font-bold tracking-widest uppercase text-green-600">
                 3 Months
               </button>

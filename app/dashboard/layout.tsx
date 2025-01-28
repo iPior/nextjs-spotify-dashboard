@@ -11,15 +11,13 @@ export default function DashboardLayout({
   recentlyplayed,
   toptracks,
   topartists,
-  recommendedartists,
-  recommendedtracks,
+  newreleases,
 }: {
   profile: React.ReactNode;
   recentlyplayed: React.ReactNode;
   toptracks: React.ReactNode;
   topartists: React.ReactNode;
-  recommendedartists: React.ReactNode;
-  recommendedtracks: React.ReactNode;
+  newreleases: React.ReactNode;
 }) {
  
   return (
@@ -31,8 +29,7 @@ export default function DashboardLayout({
           {recentlyplayed}
           {toptracks}
           {topartists}
-          {recommendedtracks}
-          {/* {recommendedartists} */}
+          {newreleases}
       </div>
     </>
   );

@@ -19,7 +19,23 @@ export default async function RecentlyPlayed() {
   return (
     <div className="h-1/4 w-4/5 p-2">
       <DashboardContainer>
-          {RecentlyPlayedList(tracks)}
+        {/* <div className="h-1/6"> */}
+          <div className="px-1 flex justify-between items-center">
+            <h1 className=" text-2xl font-bold">Recently Played</h1>
+            <div className="text-xs h-full flex items-center">
+                <button className="font-bold tracking-widest uppercase text-green-600">
+                  Past 10
+                </button>
+                <button className="mx-3 font-bold text-white tracking-widest uppercase hover:text-green-600">
+                  Past 20
+                </button>
+                <button className="font-bold text-white tracking-widest uppercase hover:text-green-600">
+                  Past 50
+                </button>
+            </div>
+          </div>
+        {/* </div> */}
+        {RecentlyPlayedList(tracks)}
       </DashboardContainer>
     </div>
   )

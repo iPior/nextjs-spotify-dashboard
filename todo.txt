@@ -1,0 +1,9 @@
+Todo:
+- Error pages
+- Default pages
+- background
+- header
+- footer
+- responsive design
+- signin and signout pages?
+- loading page
