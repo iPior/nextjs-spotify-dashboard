@@ -14,11 +14,16 @@ export default function Header() {
   return (
     <header className='flex justify-between items-center px-2 pt-4 pb-2'>
         <h1 className="text-4xl font-bold">
-          {`SpotiDash/dashboard/${session?.user.name}`}
+          <span>SpotiDash</span>
+          {session && 
+            <span
+              className='text-xl lowercase'
+            >
+              /dashboard/{session?.user.name}
+            </span>}
         </h1>
-        {/* <Navbar /> */}
       {/* <Button> Dark Mode </Button> */}
-      <Button onClick={() => signOut({ callbackUrl: '/' })}>Sign out</Button>
+      <Button onClick={() => signOut({ callbackUrl: '/auth/signout' })}>Sign out</Button>
     </header>
   )
 }
