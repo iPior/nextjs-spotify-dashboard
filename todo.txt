@@ -7,3 +7,7 @@ Todo:
 - responsive design
 - signin and signout pages?
 - loading page
+
+short term todo:
+- add clienty side functionality to all containers
+- perhaps make the buttons their own component?

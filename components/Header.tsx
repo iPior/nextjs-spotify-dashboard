@@ -18,7 +18,7 @@ export default function Header() {
         </h1>
         {/* <Navbar /> */}
       {/* <Button> Dark Mode </Button> */}
-      <Button onClick={() => signOut({ callbackUrl: '/' })}>Sign out</Button>
+      <Button onClick={() => window.location.href = "/api/auth/federated-logout"}>Sign out</Button>
     </header>
   )
 }

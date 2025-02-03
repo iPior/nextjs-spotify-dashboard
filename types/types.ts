@@ -1,4 +1,3 @@
-
 interface Image {
   height: number | null;
   url: string | null;
