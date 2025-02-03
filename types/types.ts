@@ -1,3 +1,9 @@
+import { Session } from "next-auth";
+
+export interface AuthSession {
+  session: Session;
+}
+
 interface Image {
   height: number | null;
   url: string | null;
