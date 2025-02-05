@@ -1,15 +1,10 @@
-"use client"
-
-import React from 'react'
-import { Button } from "@/components/ui/button"
-import { signOut } from 'next-auth/react'
-import { useSession } from "next-auth/react"
 import { SignOutButton } from './SignOutButton'
-import Navbar from "@/components/Navbar"
+import { getServerSession } from 'next-auth'
+import authOptions from '@/app/api/auth/[...nextauth]/options'
 
 
-export default function Header() {
-  const { data: session, status } = useSession()
+export default async function Header() {
+  const session = await getServerSession(authOptions)
   
   return (
     <header className='flex justify-between items-center px-2 pt-4 pb-2'>
@@ -23,8 +18,7 @@ export default function Header() {
             </span>}
         </h1>
       {/* <Button> Dark Mode </Button> */}
-      {/* <Button onClick={() => signOut({ callbackUrl: '/' })}>Sign out</Button> */}
-      <SignOutButton />
+      {session && <SignOutButton />}
     </header>
   )
 }

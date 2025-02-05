@@ -1,7 +1,7 @@
 'use client'
 
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Input } from "@/components/shadcn-ui/input"
+import { Label } from "@/components/shadcn-ui/label"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 

@@ -8,7 +8,8 @@ export default async function Profile() {
 
     return (
       <div className="h-1/4 w-1/5 p-2">
-        <DashboardContainer> 
+        
+        <DashboardContainer className={"p-0"}> 
             <img 
               src={session?.user.image}
               className="aspect-square h-full w-full rounded"  
