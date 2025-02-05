@@ -10,7 +10,7 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.SPOTIFY_CLIENT_ID as string,
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET as string,
       authorization: {
-        params: { scope },
+        params: { scope, show_dialog: true }, // consider removing this show_dialog maybe
       },
     }),
     
@@ -23,7 +23,6 @@ export const authOptions: NextAuthOptions = {
         token.expires_at = account.expires_at;
         token.accessToken = account.access_token;
         token.refreshToken = account.refresh_token;
-        token.idToken = account.id_token;
       }
       return token
     },
@@ -35,7 +34,6 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: '/',
-    // signOut: '/auth/signout',
   }
 
 }

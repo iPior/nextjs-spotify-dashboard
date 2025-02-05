@@ -1,17 +1,18 @@
 Todo:
 - Error pages
 - Default pages
-- background
 - header
 - footer
-- responsive design
-- signin and signout pages?
 - loading page
 
 short term todo:
-
 - perhaps make the buttons their own component?
 
 
 style
+- responsive design
 - hide index on hover
+- dark mode
+- background
+
+to logout compeltely, the user can be redirected to  https://www.spotify.com/en/logout
