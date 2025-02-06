@@ -9,7 +9,7 @@ export default function DashboardContainer({
   }>) {
     return (
       <div
-          className={cn('h-full w-full p-4 bg-gray-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100', className)}
+          className={cn('h-full w-full p-4 rounded bg-clip-padding backdrop-filter backdrop-blur-xs bg-black/10 border', className)}
           >
           <Suspense 
             fallback={

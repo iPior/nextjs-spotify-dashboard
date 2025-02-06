@@ -8,11 +8,10 @@ Todo:
 short term todo:
 - perhaps make the buttons their own component?
 
-
 style
 - responsive design
 - hide index on hover
-- dark mode
 - background
+- add tailwind scrollbar plugin
 
 to logout compeltely, the user can be redirected to  https://www.spotify.com/en/logout

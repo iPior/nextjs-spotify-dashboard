@@ -6,7 +6,8 @@ import Footer from "../components/Footer";
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
-import AuthProvider from "../context/AuthProvider"
+import AuthProvider from "@/context/AuthProvider"
+import ThemeProvider from "@/context/ThemeProvider"
 
 config.autoAddCss = false
 
@@ -26,18 +27,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${font.className} h-screen antialiased bg-slate-950 text-white relative`}
+        className={`${font.className} h-screen antialiased bg-background text-foreground relative`}
       >
           <div className="absolute z-[-10] bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
 
           <div className="h-full w-6/12 mx-auto flex flex-col justify-center"> 
-            <AuthProvider>
-              <Header/>
-              <div className="h-5/6">
-                {children}
-              </div>
-              <Footer />
-            </AuthProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+            >
+              <AuthProvider>
+                <Header/>
+                <div className="h-5/6">
+                  {children}
+                </div>
+                <Footer />
+              </AuthProvider>
+            </ThemeProvider>
           </div>
       </body>
     </html>
