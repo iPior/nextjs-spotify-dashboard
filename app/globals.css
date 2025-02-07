@@ -16,6 +16,12 @@
   --color-popover: var(--color-slate-950);
   --color-popover-foreground: var(--color-white);
 
+  --color-border: var(--color-slate-950);
+
+  --color-accent: var(--color-green-600);
+
+  --text-xxs: 0.65rem;
+
   /* --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
   */
@@ -41,6 +47,8 @@
 
     --color-popover-foreground: var(--color-slate-950);
     --color-popover: var(--color-white);
+
+    --color-border: var(--color-slate-50);
     
   }
 }
@@ -51,32 +59,29 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-100, currentColor); /* default border color*/
+    border-color: var(--color-border, currentColor); /* default border color*/
   }
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 7px !important;
+  height: 7px !important;
+}
 
-@layer utilities {
-  /* width */
-  ::-webkit-scrollbar {
-    width: 7px !important;
-    height: 7px !important;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000 !important;
+  border-radius: 10px !important;
+}
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #000 !important;
-    border-radius: 10px !important;
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #eee !important;
+  border-radius: 10px !important;
+}
 
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #eee !important;
-    border-radius: 10px !important;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #10b981 !important;
-  }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981 !important;
 }

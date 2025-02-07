@@ -23,10 +23,9 @@ export async function getTopArtists(
 }
 
 export async function getRecentlyPlayed(
-  limit: number,
   session: Session
 ): Promise<Array<SpotifyTrack>>{
-  const url: string = `https://api.spotify.com/v1/me/player/recently-played?limit=${limit}`
+  const url: string = `https://api.spotify.com/v1/me/player/recently-played?limit=50`
   return spotifyGet(url,session).then(data => data.items.map((item: {track: SpotifyTrack})=> item.track))
 }
 
@@ -36,6 +35,7 @@ export async function getNewReleases(
   const url: string = "https://api.spotify.com/v1/browse/new-releases?limit=20"
   return spotifyGet(url,session).then(data => data.albums.items)
 }
+
 
 export async function getNewReleasesFromArtist(
   search: string,

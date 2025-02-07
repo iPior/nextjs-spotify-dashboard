@@ -1,4 +1,4 @@
-import { SignOutButton } from './SignOutButton'
+import { SignOutButton } from './buttons/SignOutButton'
 import { getServerSession } from 'next-auth'
 import { Button } from '@/components/shadcn-ui/button'
 import { ThemeToggle } from '@/components/ThemeToggle'

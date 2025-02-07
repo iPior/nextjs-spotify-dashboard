@@ -1,10 +1,10 @@
 'use client'
 
-import { SpotifyArtist, AuthSession } from "@/types/types"
 import ArtistCard from "@/components/cards/ArtistCard"
+import ButtonTriplet from "@/components/buttons/ButtonTriplet"
+import { SpotifyArtist, AuthSession } from "@/types/types"
 import { useState, useEffect } from "react";
 import { getTopArtists } from "@/lib/spotifyCalls"
-import { cn } from "@/lib/utils";
 
 export default function TopArtistsList(
  { session }: AuthSession
@@ -22,32 +22,7 @@ export default function TopArtistsList(
 
   return (
     <>
-      <div className="mb-4 px-1 flex justify-between items-center">
-        <div>
-          <h1 className="text-4xl font-bold"> Top Artists </h1>
-        </div>
-        <div className="text-xs h-full flex items-center">
-          <button 
-            className={cn("font-bold tracking-widest uppercase text-white hover:text-green-600",{"text-green-600": term === "short_term"})}
-            onClick={() => setTerm("short_term")}
-          >
-            3 Months
-          </button>
-          <button 
-            className={cn("font-bold tracking-widest uppercase text-white hover:text-green-600 mx-3", {"text-green-600": term === "medium_term"})}
-            onClick={() => setTerm("medium_term")}
-          >
-            6 Months
-          </button>
-          <button 
-            className={cn("font-bold tracking-widest uppercase text-white hover:text-green-600", {"text-green-600": term === "long_term"})}
-            onClick={() => setTerm("long_term")}
-          >
-            1 Year
-          </button>
-          
-        </div>
-      </div>
+      <ButtonTriplet header="Top Artists" term={term} setTerm={setTerm}/>
       <div className="h-5/6 flex flex-col w-full overflow-y-scroll" >
         {artists.map((artist, index) => (
           <ArtistCard
