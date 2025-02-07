@@ -12,7 +12,7 @@ export default function ArtistCard({
       <img 
         src={image}
         alt={`Profile picture of ${name}`}
-        className="aspect-square w-1/5 rounded max-h-60 object-cover mx-2 "
+        className="aspect-square w-1/5 rounded max-h-60 object-cover mx-2 border border-opacity-20"
       ></img>
       <div
         className=""

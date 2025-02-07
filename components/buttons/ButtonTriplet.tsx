@@ -18,19 +18,19 @@ export default function ButtonTriplet(
         </div>
       <div className="text-xxs h-full flex items-center">
         <button 
-            className={cn(btnClass, term === "short_term" ? "text-foreground bg-accent": "hover:text-accent hover:cursor-pointer")}
+            className={cn(btnClass, term === "short_term" ? "bg-accent": "hover:text-accent hover:cursor-pointer")}
             onClick={() => setTerm("short_term")}
           >
             3 Months
           </button>
           <button 
-            className={cn(btnClass, term === "medium_term" ? "text-foreground bg-accent": "hover:text-accent hover:cursor-pointer")}
+            className={cn(btnClass, term === "medium_term" ? "bg-accent": "hover:text-accent hover:cursor-pointer")}
             onClick={() => setTerm("medium_term")}
           >
             6 Months
           </button>
           <button 
-            className={cn(btnClass, term === "long_term" ? "text-foreground bg-accent": "hover:text-accent hover:cursor-pointer")}
+            className={cn(btnClass, term === "long_term" ? "bg-accent": "hover:text-accent hover:cursor-pointer")}
             onClick={() => setTerm("long_term")}
           >
             1 Year

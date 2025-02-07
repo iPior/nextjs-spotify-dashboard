@@ -37,7 +37,7 @@ export default function RecentlyPlayedList(
     <>
       <div className="flex justify-between items-center">
         <h1 className="px-1 text-2xl font-bold">New Releases</h1>
-        <div className="h-full flex items-center font-bold">
+        <div className="flex items-center font-bold">
           <Label htmlFor="text" className="text-xl mr-2 h-fll">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Label>
@@ -45,7 +45,7 @@ export default function RecentlyPlayedList(
         </div>
       </div>
       <div className="h-5/6 w-full flex text-center overflow-x-scroll py-2">
-          {albums.map((album, index) => (
+          {albums?.map((album, index) => (
             <RecentlyPlayedCard
             key={index}
             className="rounded px-1 lg:min-w-28"  // adjust the margin for each card

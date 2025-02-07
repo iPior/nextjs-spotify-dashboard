@@ -11,7 +11,7 @@ export default function TrackCard({
       <img 
         src={image}
         alt={`Profile picture of ${name}`}
-        className="aspect-square h-5/6 w-full rounded object-cover "
+        className="aspect-square h-5/6 w-full rounded object-cover border border-opacity-20"
       ></img>
       <div className="">
         <h2

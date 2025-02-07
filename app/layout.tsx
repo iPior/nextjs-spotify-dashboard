@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${font.className} h-screen antialiased bg-background text-foreground relative`}
       >
@@ -35,6 +35,8 @@ export default function RootLayout({
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
             >
               <AuthProvider>
                 <Header/>

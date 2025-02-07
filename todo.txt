@@ -4,6 +4,7 @@ Todo:
 - header
 - footer
 - loading page
+- Meta data
 
 style
 - responsive design
@@ -13,5 +14,11 @@ style
 
 next 
 - new releaeses sort !
+- figure out refresh token strategy
 
 to logout compeltely, the user can be redirected to  https://www.spotify.com/en/logout
+
+
+
+Questions:
+- Am I overdoing it by using client components for all my lists? I could easily just have @topartists include the client component and make that its own client component.x

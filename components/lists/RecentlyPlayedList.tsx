@@ -23,7 +23,7 @@ export default function RecentlyPlayedList(
   }, [])
 
    useEffect(() => {
-    const subList = allTracks.slice((page-1)*10,(page*10))
+    const subList = allTracks?.slice((page-1)*10,(page*10))
     setTrackList(subList)
   }, [allTracks, page])
 
@@ -31,7 +31,7 @@ export default function RecentlyPlayedList(
       <>
         <RecentlyPlayedButtonGroup page={page} setPage={setPage} />
         <div className="h-5/6 w-full flex text-center overflow-x-scroll py-2">
-            {trackList.map((track, index) => (
+            {trackList?.map((track, index) => (
               <RecentlyPlayedCard
               key={index}
               className="rounded px-1 lg:min-w-28"  // adjust the margin for each card
