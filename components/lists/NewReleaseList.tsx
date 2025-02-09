@@ -8,7 +8,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import RecentlyPlayedCard from "@/components/cards/RecentlyPlayedCard"
 import { SpotifyAlbum, AuthSession } from "@/types/types"
 import { useState, useEffect } from "react";
-import { getNewReleases, getNewReleasesFromArtist } from "@/lib/spotifyCalls"
+import { getNewReleasesFromArtists } from "@/lib/spotifyCalls"
 
 export default function RecentlyPlayedList(
   { session }: AuthSession
@@ -18,19 +18,20 @@ export default function RecentlyPlayedList(
 
   useEffect(() => {
     const getAlbums = async () => {
-      const albumsData = await getNewReleases(session)
+      const albumsData = await getNewReleasesFromArtists(session)
+      console.log(albumsData)
       setAlbums(albumsData)
     }
     getAlbums()
   }, [])
 
-    useEffect(() => {
-    const getData = async () => {
-      const data = await getNewReleasesFromArtist(search, session)
-      setAlbums(data)
-    }
-    getData()
-  }, [search])
+  //   useEffect(() => {
+  //   const getData = async () => {
+  //     const data = await getNewReleasesFromArtistSearch(search, session)
+  //     setAlbums(data)
+  //   }
+  //   getData()
+  // }, [search])
   
 
    return (

@@ -18,6 +18,8 @@ export interface SpotifyAlbum{
   images: Array<Image>;
   name: string;
   artists: Array<SpotifyArtist>;
+  release_date: string;
+  release_date_precision: string;
 }
 
 export interface SpotifyArtist{
