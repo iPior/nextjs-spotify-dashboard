@@ -11,13 +11,13 @@ export default function NewReleaseCard({
       <img 
         src={image}
         alt={`Profile picture of ${name}`}
-        className="aspect-square h-5/6 w-full rounded object-cover border border-opacity-20"
+        className="aspect-square w-full rounded object-cover border border-opacity-20"
       ></img>
       <div className="">
+        <h2>{artist}</h2>
         <h2
           className="text-sm truncate"
         >{name}</h2>
-        {/* <h2>{artist}</h2> */}
       </div>
     </div>
   )

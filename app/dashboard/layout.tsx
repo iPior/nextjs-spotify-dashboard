@@ -25,11 +25,17 @@ export default function DashboardLayout({
       <div 
         className="h-full flex flex-wrap flex-row w-full"
       >
-          {profile}
-          {recentlyplayed}
-          {toptracks}
-          {topartists}
+        <div className="w-2/12 h-full">
           {newreleases}
+        </div>
+        <div className="w-10/12 h-full">
+          {/* {profile} */}
+          {recentlyplayed}
+          <div className="flex h-2/3 w-full">
+            {toptracks}
+            {topartists}
+          </div>
+        </div>
       </div>
     </>
   );

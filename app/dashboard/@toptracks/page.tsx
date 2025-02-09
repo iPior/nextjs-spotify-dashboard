@@ -9,7 +9,7 @@ export default async function TopTracks() {
   if(!session) redirect("/");
 
   return (
-    <div className="h-1/2 w-1/2 p-2">
+    <div className="h-full w-1/2 p-2">
       <DashboardContainer>
         <TopTracksList session={session} />
       </DashboardContainer>

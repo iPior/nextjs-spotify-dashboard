@@ -65,7 +65,7 @@ export async function getRecentReleases(artistIds: Array<SpotifyArtist>, session
 
     // Extract and filter recent releases
     const allRecentReleases = responses.flatMap(data =>
-      data.filter(item => {
+      data?.filter(item => {
         if (item.release_date_precision !== "day") return false;
         return new Date(item.release_date) >= customPastDate;
       })

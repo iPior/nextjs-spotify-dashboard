@@ -36,23 +36,23 @@ export default function RecentlyPlayedList(
 
    return (
     <>
-      <div className="flex justify-between items-center">
+      <div className="h-[5%] flex justify-between items-center">
         <h1 className="px-1 text-2xl font-bold">New Releases</h1>
-        <div className="flex items-center font-bold">
+        {/* <div className="flex items-center font-bold">
           <Label htmlFor="text" className="text-xl mr-2 h-fll">
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </Label>
           <Input type="text" placeholder="Artist name" onChange={(e) => setSearch(e.target.value.toString())}/>
-        </div>
+        </div> */}
       </div>
-      <div className=" text-center overflow-x-scroll py-2 grid grid-cols-4 bg-red-300">
+      <div className="h-[95%] text-center overflow-y-scroll grid grid-cols-1">
           {albums?.map((album, index) => (
             <NewReleaseCard
             key={index}
-            className="rounded px-1"  // adjust the margin for each card
+            className="rounded px-1 mb-4"  // adjust the margin for each card
             index={index+1}
-            image={album.images[0].url as string}
-            name={album.name}
+            image={album?.images[0].url as string}
+            name={album?.name}
             artist={album?.artists[0].name}
             />
           ))}

@@ -11,9 +11,9 @@ export default function RecentlyPlayedCard({
       <img 
         src={image}
         alt={`Profile picture of ${name}`}
-        className="aspect-square h-5/6 w-full rounded object-cover border border-opacity-20"
+        className="aspect-square h-[90%] w-full rounded object-cover border border-opacity-20"
       ></img>
-      <div className="">
+      <div className="h-[10%]">
         <h2
           className="text-sm truncate"
         >{name}</h2>
