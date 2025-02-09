@@ -1,6 +1,6 @@
 import { cardProps } from "@/types/types"
 
-export default function RecentlyPlayedCard({
+export default function NewReleaseCard({
   className,
   image,
   name,

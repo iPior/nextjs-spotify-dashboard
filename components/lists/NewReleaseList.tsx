@@ -5,7 +5,7 @@ import { Label } from "@/components/shadcn-ui/label"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-import RecentlyPlayedCard from "@/components/cards/RecentlyPlayedCard"
+import NewReleaseCard from "@/components/cards/NewReleaseCard"
 import { SpotifyAlbum, AuthSession } from "@/types/types"
 import { useState, useEffect } from "react";
 import { getNewReleasesFromArtists } from "@/lib/spotifyCalls"
@@ -45,11 +45,11 @@ export default function RecentlyPlayedList(
           <Input type="text" placeholder="Artist name" onChange={(e) => setSearch(e.target.value.toString())}/>
         </div>
       </div>
-      <div className="h-5/6 w-full flex text-center overflow-x-scroll py-2">
+      <div className=" text-center overflow-x-scroll py-2 grid grid-cols-4 bg-red-300">
           {albums?.map((album, index) => (
-            <RecentlyPlayedCard
+            <NewReleaseCard
             key={index}
-            className="rounded px-1 lg:min-w-28"  // adjust the margin for each card
+            className="rounded px-1"  // adjust the margin for each card
             index={index+1}
             image={album.images[0].url as string}
             name={album.name}
