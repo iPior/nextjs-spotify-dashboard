@@ -5,6 +5,7 @@ import RecentlyPlayedCard from "@/components/cards/RecentlyPlayedCard"
 import { useState, useEffect } from "react";
 import { getRecentlyPlayed } from "@/lib/spotifyCalls"
 import RecentlyPlayedButtonGroup from "../buttons/RecentlyPlayedButtonGroup";
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function RecentlyPlayedList(
   { session }: AuthSession
@@ -30,16 +31,27 @@ export default function RecentlyPlayedList(
    return (
       <>
         <RecentlyPlayedButtonGroup page={page} setPage={setPage} />
-        <div className="h-5/6 w-full flex text-center overflow-x-scroll py-2">
-            {trackList?.map((track, index) => (
-              <RecentlyPlayedCard
-              key={index}
-              index={index+1}
-              image={track.album.images[0].url as string}
-              name={track?.name}
-              artist={track?.artists[0].name}
-              />
-            ))}
+        <div className="h-5/6 w-full flex text-center overflow-x-scroll pb-2">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={page}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="flex"
+            >
+              {trackList?.map((track, index) => (
+                <RecentlyPlayedCard
+                key={index}
+                index={index+1}
+                image={track.album.images[0].url as string}
+                name={track?.name}
+                artist={track?.artists[0].name}
+                />
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </>
    ) 

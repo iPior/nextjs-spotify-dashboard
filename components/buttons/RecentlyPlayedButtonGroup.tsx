@@ -10,9 +10,7 @@ export default function RecentlyPlayedButtonGroup({ page, setPage }: ChildProps)
 
   return (
     <div className="flex justify-between items-center">
-      <div className="">
-        <h1 className="px-1 text-2xl font-bold">Recently Played</h1>
-      </div>
+      <h1 className="px-1 text-2xl font-bold tracking-tight uppercase mb-2">Recently Played</h1>
       <div className="text-xs h-full flex items-center">
         <button 
           className={cn(btnClass, page === 1 ? "bg-accent" : "hover:text-accent hover:cursor-pointer")}

@@ -1,20 +1,20 @@
 Todo:
 - Error pages
 - Default pages
-- header
-- footer
 - loading page
 - Meta data
 
 style
 - responsive design
-- hide index on hover
 - background
-- add tailwind scrollbar plugin
+- transition effect for containers
+- reverse butto styling so that dark mode has dark buttons and light mode has light buttons
 
 next 
 - new releaeses sort !
 - figure out refresh token strategy
+- figure out how to have a consistent container header
+- 2 second loading screen when loggin in
 
 to logout compeltely, the user can be redirected to  https://www.spotify.com/en/logout
 

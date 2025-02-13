@@ -11,7 +11,7 @@
   --color-foreground: var(--color-slate-950);
 
   --color-primary: var(--color-slate-950);
-  --color-primary-foreground: var(--color-gray-50);
+  --color-primary-foreground: var(--color-slate-50);
   
   --color-popover: var(--color-slate-950);
   --color-popover-foreground: var(--color-white);
@@ -22,10 +22,11 @@
   --color-accent-foreground: var(--color-slate-950); /* variable not used yet*/
 
   --color-card: var(--color-gray-50);
-  --color-card-foreground: var(--color-slate-50);
+  --color-card-border: var(--color-slate-300);
+  --color-card-foreground: var(--color-slate-950);
 
   --color-container: var(--color-black);
-  --color-container-foreground: var(--color-white);
+  --color-container-foreground: var(--color-slate-50);
 
   --text-xxs: 0.65rem;
 
@@ -53,9 +54,16 @@
     --color-popover-foreground: var(--color-slate-950);
     --color-popover: var(--color-white);
 
-    --color-border: var(--color-slate-50);
+    --color-border: var(--color-slate-950);
 
     --color-accent-foreground: var(--color-slate-50); /* variable not used yet*/
+
+    --color-card: var(--color-slate-950);
+    --color-card-border: var(--color-slate-700);
+    --color-card-foreground: var(--color-slate-50);
+  
+    --color-container: var(--color-white);
+    --color-container-foreground: var(--color-slate-950); /* variable not used yet*/
     
   }
 }
@@ -77,7 +85,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-foreground) !important;
+  background: var(--color-container-foreground) !important;
   border-radius: 10px !important;
 }
 

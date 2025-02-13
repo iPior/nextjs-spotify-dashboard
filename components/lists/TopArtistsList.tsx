@@ -5,6 +5,7 @@ import ButtonTriplet from "@/components/buttons/ButtonTriplet"
 import { SpotifyArtist, AuthSession } from "@/types/types"
 import { useState, useEffect } from "react";
 import { getTopArtists } from "@/lib/spotifyCalls"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function TopArtistsList(
  { session }: AuthSession
@@ -44,15 +45,26 @@ export default function TopArtistsList(
   return (
     <>
       <ButtonTriplet header="Top Artists" term={term} setTerm={setTerm}/>
-      <div className="h-5/6 flex flex-col w-full overflow-y-scroll" >
-        {artists?.map((artist, index) => (
-          <ArtistCard
-            key={index}
-            index={index+1}
-            image={artist?.images[0].url as string}
-            name={artist.name}   
-          />
-        ))}
+      <div className="h-[90%] flex flex-col w-full overflow-y-scroll" >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={term}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            {artists?.map((artist, index) => (
+              <ArtistCard
+                key={index}
+                index={index+1}
+                image={artist?.images[0].url as string}
+                name={artist.name}
+                genres={artist.genres}   
+              />
+            ))}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </>
   )

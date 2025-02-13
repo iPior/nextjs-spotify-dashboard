@@ -14,7 +14,7 @@ export default function ButtonTriplet(
   return (
     <div className="mb-4 px-1 flex justify-between items-center">
       <div>
-          <h1 className="text-4xl font-bold">{header}</h1>
+          <h1 className="text-2xl font-bold tracking-tight uppercase bg-accentrounde">{header}</h1>
         </div>
       <div className="text-xxs h-full flex items-center">
         <button 

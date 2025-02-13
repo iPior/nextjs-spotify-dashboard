@@ -52,4 +52,5 @@ export interface cardProps {
   image: string;
   name: string;
   artist?: string;
+  genres?: Array<string>;
 }
