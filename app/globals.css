@@ -21,6 +21,12 @@
   --color-accent: var(--color-green-600);
   --color-accent-foreground: var(--color-slate-950); /* variable not used yet*/
 
+  --color-card: var(--color-gray-50);
+  --color-card-foreground: var(--color-slate-50);
+
+  --color-container: var(--color-black);
+  --color-container-foreground: var(--color-white);
+
   --text-xxs: 0.65rem;
 
   /* --color-card: hsl(var(--card));

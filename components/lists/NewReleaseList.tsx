@@ -45,11 +45,10 @@ export default function RecentlyPlayedList(
           <Input type="text" placeholder="Artist name" onChange={(e) => setSearch(e.target.value.toString())}/>
         </div> */}
       </div>
-      <div className="h-[95%] text-center overflow-y-scroll grid grid-cols-1">
+      <div className="h-[95%] text-center overflow-y-scroll grid grid-cols-1 px-1">
           {albums?.map((album, index) => (
             <NewReleaseCard
             key={index}
-            className="rounded px-1 mb-4"  // adjust the margin for each card
             index={index+1}
             image={album?.images[0].url as string}
             name={album?.name}

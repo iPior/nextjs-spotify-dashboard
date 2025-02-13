@@ -1,4 +1,5 @@
 import { cardProps } from "@/types/types"
+import { cn } from "@/lib/utils";
 
 export default function NewReleaseCard({
   className,
@@ -7,7 +8,7 @@ export default function NewReleaseCard({
   artist,
 }:  cardProps){
   return (
-    <div className={className}>
+    <div className={cn('rounded mb-4 border', className)}>
       <img 
         src={image}
         alt={`Profile picture of ${name}`}

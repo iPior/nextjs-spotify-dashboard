@@ -1,4 +1,5 @@
 import { cardProps } from "@/types/types"
+import { cn } from "@/lib/utils"
 
 export default function RecentlyPlayedCard({
   className,
@@ -7,7 +8,7 @@ export default function RecentlyPlayedCard({
   artist,
 }:  cardProps){
   return (
-    <div className={className}>
+    <div className={cn('rounded px-1 lg:min-w-40', className)}>
       <img 
         src={image}
         alt={`Profile picture of ${name}`}
