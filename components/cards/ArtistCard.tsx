@@ -8,7 +8,6 @@ export default function ArtistCard({
   name,
   genres,
 }:  cardProps){
-  console.log(genres)
    const capitalizedGenres = genres?.length ? genres.map(genre => 
     genre.split(' ').map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
