@@ -17,11 +17,5 @@ export async function spotifyGet(
         Authorization: `Bearer ${session.user.accessToken}`,
       },
     }).then(res => res.json())
-
-    // If token is expired (401), try to refresh
-    if (res.status === 401) {
-    
-    }
-    console.log(res)
     return res
 }
