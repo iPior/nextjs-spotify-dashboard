@@ -3,15 +3,18 @@ Todo:
 - Default pages
 - loading page
 - Meta data
+- 2 second loading screen when loggin in
 
 style
 - responsive design
 
 next 
-- new releaeses sort !
-- figure out refresh token strategy
-- figure out how to have a consistent container header
-- 2 second loading screen when loggin in
+- new releaeses look to only be spitting out singles
+
+- refresh token may not be refresh correctly (6 calls are made instead of one)
+
+
+
 
 to logout compeltely, the user can be redirected to  https://www.spotify.com/en/logout
 
