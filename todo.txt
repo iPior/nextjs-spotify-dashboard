@@ -6,9 +6,6 @@ Todo:
 
 style
 - responsive design
-- background
-- transition effect for containers
-- reverse butto styling so that dark mode has dark buttons and light mode has light buttons
 
 next 
 - new releaeses sort !

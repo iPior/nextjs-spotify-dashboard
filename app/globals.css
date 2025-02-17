@@ -7,40 +7,28 @@
 
 @theme {
   /* add lightmode colors here */
-  --color-background: var(--color-slate-50);
+  --color-background: var(--color-stone-100);
   --color-foreground: var(--color-slate-950);
 
   --color-primary: var(--color-slate-950);
   --color-primary-foreground: var(--color-slate-50);
   
-  --color-popover: var(--color-slate-950);
-  --color-popover-foreground: var(--color-white);
+  --color-popover: var(--color-gray-50);
+  --color-popover-foreground: var(--color-slate-950);
 
-  --color-border: var(--color-slate-950);
+  --color-border: var(--color-stone-400);
 
   --color-accent: var(--color-green-600);
   --color-accent-foreground: var(--color-slate-950); /* variable not used yet*/
 
   --color-card: var(--color-gray-50);
-  --color-card-border: var(--color-slate-300);
+  --color-card-border: var(--color-border);
   --color-card-foreground: var(--color-slate-950);
 
   --color-container: var(--color-black);
-  --color-container-foreground: var(--color-slate-50);
+  --color-container-foreground: var(--color-slate-950);
 
   --text-xxs: 0.65rem;
-
-  /* --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  */
-
-  /*
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
- */
 }
 
 @layer theme {
@@ -51,19 +39,19 @@
     --color-primary: var(--color-gray-50);
     --color-primary-foreground: var(--color-slate-950);
 
-    --color-popover-foreground: var(--color-slate-950);
-    --color-popover: var(--color-white);
+    --color-popover: var(--color-slate-950);
+    --color-popover-foreground: var(--color-slate-50);
 
-    --color-border: var(--color-slate-950);
+    --color-border: var(--color-gray-600);
 
     --color-accent-foreground: var(--color-slate-50); /* variable not used yet*/
 
     --color-card: var(--color-slate-950);
-    --color-card-border: var(--color-slate-700);
+    --color-card-border: var(--color-border);
     --color-card-foreground: var(--color-slate-50);
   
     --color-container: var(--color-white);
-    --color-container-foreground: var(--color-slate-950); /* variable not used yet*/
+    --color-container-foreground: var(--color-slate-50); /* variable not used yet*/
     
   }
 }
@@ -85,7 +73,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-container-foreground) !important;
+  background: var(--color-card) !important;
   border-radius: 10px !important;
 }
 

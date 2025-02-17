@@ -15,7 +15,7 @@ export default function ArtistCard({
   ) : ["Pop"]
   const genresString = capitalizedGenres?.join(", ")
   return (
-    <div className={cn('flex w-full mb-1 px-1 rounded transition duration-500 ease-in-out transform hover:cursor-pointer hover:-translate-x-4 group', className)}>
+    <div className={cn('flex w-full mb-1 px-1 rounded transition duration-500 ease-in-out transform hover:-translate-x-4 group', className)}>
       <h1 className="font-bold text-card-foreground  transition-opacity duration-500 group-hover:opacity-0 w-8 ">{index}</h1> 
       <div className="flex w-full rounded border border-card-border truncate group/inner bg-card">
         <img 

@@ -9,12 +9,12 @@ interface ChildProps {
 export default function ButtonTriplet(
   {header, term, setTerm} : ChildProps
 ){
-  const btnClass: string = "font-bold tracking-widest uppercase text-foreground p-1 px-2 rounded"
+  const btnClass: string = "font-bold uppercase text-container-foreground p-1 px-2 rounded"
 
   return (
     <div className="mb-4 px-1 flex justify-between items-center">
       <div>
-          <h1 className="text-2xl font-bold tracking-tight uppercase bg-accentrounde">{header}</h1>
+          <h1 className="text-2xl font-extrabold tracking-tight uppercase text-container-foreground">{header}</h1>
         </div>
       <div className="text-xxs h-full flex items-center">
         <button 

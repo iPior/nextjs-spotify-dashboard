@@ -29,7 +29,11 @@ export default function RootLayout({
       <body
         className={`${font.className} h-screen antialiased bg-background text-foreground relative`}
       >
-          <div className="absolute z-[-10] bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+          <div className="absolute z-[-10] bottom-0 left-0 right-0 top-0 
+          bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)]
+          dark:bg-[linear-gradient(to_right,#0E1321_1px,transparent_1px),linear-gradient(to_bottom,#0E1321_1px,transparent_1px)]
+          bg-[size:14px_24px] 
+          [mask-image:radial-gradient(ellipse_55%_55%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
           <div className="h-full w-8/12 mx-auto flex flex-col justify-center"> 
             <ThemeProvider

@@ -37,7 +37,7 @@ export default function RecentlyPlayedList(
    return (
     <>
       <div className="h-[5%] flex justify-between items-center">
-        <h1 className="px-2 text-2xl font-bold tracking-tighter uppercase">New Releases</h1>
+        <h1 className="px-2 text-2xl font-extrabold text-container-foreground tracking-tighter uppercase">New Releases</h1>
       </div>
       <div className="h-[95%] text-center overflow-y-scroll grid grid-cols-1 px-2">
           {albums?.map((album, index) => (
