@@ -7,13 +7,11 @@ import React from "react";
 // };
 
 export default function DashboardLayout({
-  profile,
   recentlyplayed,
   toptracks,
   topartists,
   newreleases,
 }: {
-  profile: React.ReactNode;
   recentlyplayed: React.ReactNode;
   toptracks: React.ReactNode;
   topartists: React.ReactNode;

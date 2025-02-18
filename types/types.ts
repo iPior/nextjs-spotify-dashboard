@@ -53,4 +53,6 @@ export interface cardProps {
   name: string;
   artist?: string;
   genres?: Array<string>;
+  type?: string;
+  release_date?: string;
 }

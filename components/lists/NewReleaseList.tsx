@@ -1,10 +1,5 @@
 'use client'
 
-import { Input } from "@/components/shadcn-ui/input"
-import { Label } from "@/components/shadcn-ui/label"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-
 import NewReleaseCard from "@/components/cards/NewReleaseCard"
 import { SpotifyAlbum, AuthSession } from "@/types/types"
 import { useState, useEffect } from "react";
@@ -14,25 +9,28 @@ export default function RecentlyPlayedList(
   { session }: AuthSession
 ){
   const [albums, setAlbums] = useState<Array<SpotifyAlbum>>([])
-  const [search, setSearch] = useState<string>("")
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const getAlbums = async () => {
-      const albumsData = await getNewReleasesFromArtists(session)
-      console.log(albumsData)
-      setAlbums(albumsData)
+      setIsLoading(true)
+      try {
+        const albumsData = await getNewReleasesFromArtists(session)
+        const sortedAlbums = albumsData.sort((a, b) => {
+          const dateA = new Date(a.release_date)
+          const dateB = new Date(b.release_date)
+          return dateB.getTime() - dateA.getTime()
+        })
+        console.log("sortedAlbums", sortedAlbums)
+        setAlbums(sortedAlbums)
+      } catch (error) {
+        console.error("Error fetching albums:", error)
+      } finally {
+        setIsLoading(false)
+      }
     }
     getAlbums()
   }, [])
-
-  //   useEffect(() => {
-  //   const getData = async () => {
-  //     const data = await getNewReleasesFromArtistSearch(search, session)
-  //     setAlbums(data)
-  //   }
-  //   getData()
-  // }, [search])
-  
 
    return (
     <>
@@ -47,6 +45,8 @@ export default function RecentlyPlayedList(
             image={album?.images[0].url as string}
             name={album?.name}
             artist={album?.artists[0].name}
+            type={album.album_type}
+            release_date={album.release_date}
             />
           ))}
       </div>

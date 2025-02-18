@@ -48,24 +48,57 @@ async function getAlbumsFromArtistSearch(
 async function getArtistsFromUser(
   session: Session
 ): Promise<Array<SpotifyArtist>>{
-  const url: string = `https://api.spotify.com/v1/me/following?type=artist&limit=50`
-  return spotifyGet(url,session).then(data => data?.artists?.items)
+  // const url: string = `https://api.spotify.com/v1/me/following?type=artist&limit=50`
+  // return spotifyGet(url,session).then(data => data?.artists?.items)
+
+  async function fetchArtistsPage(after?: string): Promise<Array<SpotifyArtist>> {
+    const url = `https://api.spotify.com/v1/me/following?type=artist&limit=50${after ? `&after=${after}` : ''}`
+    const data = await spotifyGet(url, session)
+    
+    // If no data or no items, return empty array
+    if (!data?.artists?.items) return []
+    
+    const currentArtists = data.artists.items
+    
+    // If there are more artists to fetch (cursor available)
+    if (data.artists.cursors?.after) {
+      // Recursively fetch next page and combine with current artists
+      const nextArtists = await fetchArtistsPage(data.artists.cursors.after)
+      return [...currentArtists, ...nextArtists]
+    }
+    
+    // No more pages, return current artists
+    return currentArtists
+  }
+
+  try {
+    // Start fetching from the first page
+    const allArtists = await fetchArtistsPage()
+    console.log(`Total artists fetched: ${allArtists.length}`)
+    return allArtists
+  } catch (error) {
+    console.error('Error fetching artists:', error)
+    return []
+  }
+  
 }
 
 
 export async function getRecentReleases(artistIds: Array<SpotifyArtist>, session: Session) {
   const customPastDate = new Date();
-  customPastDate.setDate(customPastDate.getDate() - 30); //new Releases in the past month
+  customPastDate.setDate(customPastDate.getDate() - 14); //new Releases in the past month
 
   try {
     const requests = artistIds.map(artistId =>
       getAlbumsFromArtistSearch(artistId.id, session)
     );
     const responses = await Promise.all(requests); // Wait for all API calls to complete
-
     // Extract and filter recent releases
-    const allRecentReleases = responses.flatMap(data =>
+    const allRecentReleases = responses
+      .filter(Boolean) // Remove null/undefined responses
+      .flatMap(data =>
       data?.filter(item => {
+        if (!item || !item.release_date || !item.album_type) return false;
         if (item.release_date_precision !== "day") return false;
         return new Date(item.release_date) >= customPastDate;
       })
@@ -83,7 +116,6 @@ export async function getNewReleasesFromArtists(
   session: Session
 ): Promise<Array<SpotifyAlbum>>{
   const artists = await getArtistsFromUser(session)
-  // const artists = await getTopArtists("long_term", session);
   
   return getRecentReleases(artists, session);
 }

@@ -7,7 +7,7 @@ export default async function Header() {
   const session = await getServerSession()
   
   return (
-    <header className='flex justify-between items-center px-2 pt-4 pb-2'>
+    <header className='flex justify-between items-center p-1'>
         <div className='flex h-full items-center'>
           {session && <img 
             src={session?.user.image}

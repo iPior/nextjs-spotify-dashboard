@@ -9,7 +9,7 @@ interface ChildProps {
 export default function ButtonTriplet(
   {header, term, setTerm} : ChildProps
 ){
-  const btnClass: string = "font-bold uppercase text-container-foreground p-1 px-2 rounded"
+  const btnClass: string = "font-bold uppercase text-container-foreground p-1 px-2 rounded border ml-1"
 
   return (
     <div className="mb-4 px-1 flex justify-between items-center">
@@ -18,19 +18,19 @@ export default function ButtonTriplet(
         </div>
       <div className="text-xxs h-full flex items-center">
         <button 
-            className={cn(btnClass, term === "short_term" ? "bg-accent": "hover:text-accent hover:cursor-pointer")}
+            className={cn(btnClass, term === "short_term" ? "bg-accent": "hover:text-accent hover:cursor-pointer bg-card")}
             onClick={() => setTerm("short_term")}
           >
             3 Months
           </button>
           <button 
-            className={cn(btnClass, term === "medium_term" ? "bg-accent": "hover:text-accent hover:cursor-pointer")}
+            className={cn(btnClass, term === "medium_term" ? "bg-accent": "hover:text-accent hover:cursor-pointer bg-card")}
             onClick={() => setTerm("medium_term")}
           >
             6 Months
           </button>
           <button 
-            className={cn(btnClass, term === "long_term" ? "bg-accent": "hover:text-accent hover:cursor-pointer")}
+            className={cn(btnClass, term === "long_term" ? "bg-accent": "hover:text-accent hover:cursor-pointer bg-card")}
             onClick={() => setTerm("long_term")}
           >
             1 Year

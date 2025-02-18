@@ -4,8 +4,13 @@ import DashboardContainer from '@/components/DashboardContainer'
 
 export default function error() {
   return (
-    <DashboardContainer>
-      Error
-    </DashboardContainer>
+    <div className="w-full h-full p-1">
+      <DashboardContainer>
+      <div className="flex flex-col items-center justify-center h-full">
+        <h1 className="text-2xl font-bold">Error</h1>
+        <p className="text-sm">Something went wrong</p>
+      </div>
+      </DashboardContainer>
+    </div>
   )
 }

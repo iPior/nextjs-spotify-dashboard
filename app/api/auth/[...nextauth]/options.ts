@@ -24,9 +24,9 @@ export const authOptions: NextAuthOptions = {
           ...token,
           accessToken: account.access_token,
           refreshToken: account.refresh_token,
-          accessTokenExpires: account.expires_in as number *1000,
+          accessTokenExpires: Date.now() + (account.expires_in as number *1000),
         } 
-      } 
+      }
       
       if (token.accessTokenExpires && typeof token.accessTokenExpires === 'number' && Date.now() < token.accessTokenExpires) {
         return token
