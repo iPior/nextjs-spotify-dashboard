@@ -19,8 +19,8 @@ export default function NewReleaseCard({
       {/* <div className="mb-2 group/inner"> */}
       <h2 className="text-xl font-bold leading-none py-2 text-card-foreground group-hover:text-accent transition duration-200">{name}</h2>
       <h3 className="text-sm transition text-card-foreground duration-500 leading-2 mb-2">{artist}</h3>
-      <h3 className="text-sm transition text-card-foreground duration-500 leading-2 mb-2">{type}</h3>
-      <h3 className="text-sm transition text-card-foreground duration-500 leading-2 mb-2">{release_date}</h3>
+      {/* <h3 className="text-sm transition text-card-foreground duration-500 leading-2 mb-2">{type}</h3> */}
+      {/* <h3 className="text-sm transition text-card-foreground duration-500 leading-2 mb-2">{release_date}</h3> */}
       {/* </div> */}
     </div>
   )

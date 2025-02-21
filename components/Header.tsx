@@ -8,21 +8,24 @@ export default async function Header() {
   
   return (
     <header className='flex justify-between items-center p-1'>
+
+        {session &&
         <div className='flex h-full items-center'>
-          {session && <img 
+           <img 
             src={session?.user.image}
             className="aspect-square h-12 rounded mr-2 border border-card-border"  
-            />}
+            />
           <h1 className="text-4xl font-bold">
             <span>SpotiDash</span>
-            {session && 
               <span
                 className='text-xl lowercase'
               >
                 /{session?.user.name}
-              </span>}
+              </span>
           </h1> 
         </div>
+        }
+        {!session && <div></div>}
         <div className='flex'>
           <ThemeToggle />
           {session && <SignOutButton />}

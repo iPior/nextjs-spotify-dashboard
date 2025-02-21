@@ -12,11 +12,11 @@ export default function ButtonTriplet(
   const btnClass: string = "font-bold uppercase text-container-foreground p-1 px-2 rounded border ml-1"
 
   return (
-    <div className="mb-4 px-1 flex justify-between items-center">
+    <div className="p-1 flex flex-col xl:flex-row justify-between items-center">
       <div>
           <h1 className="text-2xl font-extrabold tracking-tight uppercase text-container-foreground">{header}</h1>
         </div>
-      <div className="text-xxs h-full flex items-center">
+      <div className="text-xxs flex items-center">
         <button 
             className={cn(btnClass, term === "short_term" ? "bg-accent": "hover:text-accent hover:cursor-pointer bg-card")}
             onClick={() => setTerm("short_term")}

@@ -9,10 +9,9 @@ export default async function NewReleases() {
   if(!session) redirect("/");
 
     return (
-      <div className="w-full h-full p-1">
+      
         <DashboardContainer>
           <NewReleaseList session={session}/>
         </DashboardContainer>
-      </div>
     )
 }

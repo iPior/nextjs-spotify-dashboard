@@ -4,6 +4,11 @@ Todo:
 - loading page
 - Meta data
 - 2 second loading screen when loggin in
+- store data locally
+  - check top tracks every day
+  - check top artists every day
+  - check recently played every refresh
+  - check new releases every day
 
 style
 - responsive design

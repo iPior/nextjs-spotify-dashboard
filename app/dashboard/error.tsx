@@ -5,7 +5,7 @@ import DashboardContainer from '@/components/DashboardContainer'
 export default function error() {
   return (
     <DashboardContainer>
-      Error
+      Error doink
     </DashboardContainer>
   )
 }
