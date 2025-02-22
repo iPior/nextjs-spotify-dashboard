@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${font.className} h-screen antialiased bg-background text-foreground relative`}
+        className={`${font.className} h-screen w-screen antialiased bg-background text-foreground relative`}
       >
           <div className="absolute z-[-10] bottom-0 left-0 right-0 top-0 
           bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)]
@@ -35,7 +35,7 @@ export default function RootLayout({
           bg-[size:14px_24px] 
           [mask-image:radial-gradient(ellipse_55%_55%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
-          <div className="h-full w-8/12 mx-auto flex flex-col justify-center"> 
+          <div className="h-full w-full lg:w-8/12 mx-auto flex flex-col justify-center"> 
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -44,7 +44,7 @@ export default function RootLayout({
             >
               <AuthProvider>
                 <Header/>
-                <div className="h-5/6">
+                <div className="h-full lg:h-5/6">
                   {children}
                 </div>
                 <Footer />

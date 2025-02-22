@@ -50,37 +50,6 @@ async function getArtistsFromUser(
 ): Promise<Array<SpotifyArtist>>{
   const url: string = `https://api.spotify.com/v1/me/following?type=artist&limit=50`
   return spotifyGet(url,session).then(data => data?.artists?.items)
-
-  // async function fetchArtistsPage(after?: string): Promise<Array<SpotifyArtist>> {
-  //   const url = `https://api.spotify.com/v1/me/following?type=artist&limit=50${after ? `&after=${after}` : ''}`
-  //   const data = await spotifyGet(url, session)
-    
-  //   // If no data or no items, return empty array
-  //   if (!data?.artists?.items) return []
-    
-  //   const currentArtists = data.artists.items
-    
-  //   // If there are more artists to fetch (cursor available)
-  //   if (data.artists.cursors?.after) {
-  //     // Recursively fetch next page and combine with current artists
-  //     const nextArtists = await fetchArtistsPage(data.artists.cursors.after)
-  //     return [...currentArtists, ...nextArtists]
-  //   }
-    
-  //   // No more pages, return current artists
-  //   return currentArtists
-  // }
-
-  // try {
-  //   // Start fetching from the first page
-  //   const allArtists = await fetchArtistsPage()
-  //   console.log(`Total artists fetched: ${allArtists.length}`)
-  //   return allArtists
-  // } catch (error) {
-  //   console.error('Error fetching artists:', error)
-  //   return []
-  // }
-  
 }
 
 
@@ -116,7 +85,6 @@ export async function getNewReleasesFromArtists(
   session: Session
 ): Promise<Array<SpotifyAlbum>>{
   const artists = await getArtistsFromUser(session)
-  
   return getRecentReleases(artists, session);
 }
 

@@ -9,10 +9,8 @@ export default async function TopArtists() {
   if(!session) redirect("/");
 
     return (
-    <div className="h-full w-1/2 p-1">
       <DashboardContainer>
         <TopArtistsList session={session} />
       </DashboardContainer>
-    </div>
   )
 }

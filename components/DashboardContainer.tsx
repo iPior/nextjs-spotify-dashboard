@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 import { cn } from "@/lib/utils";
+import LoadingScreen from "@/components/Loading";
 export default function DashboardContainer({
     className,
     children,
@@ -9,14 +10,10 @@ export default function DashboardContainer({
   }>) {
     return (
       <div
-          className={cn('h-full w-full p-4 rounded backdrop-blur-xs bg-container/10 border container', className)}
+          className={cn('h-full w-full p-4  rounded-4xl lg:rounded backdrop-blur-xs bg-container/10 border container', className)}
           >
           <Suspense 
-            fallback={
-              <div className="flex items-center justify-center">
-                Loading component...
-              </div>
-            }
+            fallback={ <LoadingScreen />}
           >  
             {children}
           </Suspense>

@@ -10,10 +10,8 @@ export default async function RecentlyPlayed() {
   if(!session) redirect("/");
 
   return (
-    <div className="h-1/3 w-full p-1">
       <DashboardContainer>
         <RecentlyPlayedList session={session} />
       </DashboardContainer>
-    </div>
   )
 }
