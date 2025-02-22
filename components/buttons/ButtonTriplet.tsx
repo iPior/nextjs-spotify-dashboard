@@ -12,7 +12,7 @@ export default function ButtonTriplet(
   const btnClass: string = "font-bold uppercase text-container-foreground p-1 px-2 rounded border ml-1"
 
   return (
-    <div className="p-1 flex flex-col xl:flex-row justify-between items-center">
+    <div className="p-1 flex flex-col sm:flex-row md:flex-col xl:flex-row justify-between items-center">
       <div>
           <h1 className="text-2xl font-extrabold tracking-tight uppercase text-container-foreground">{header}</h1>
         </div>

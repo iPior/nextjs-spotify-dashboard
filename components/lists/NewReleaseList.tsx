@@ -35,7 +35,7 @@ export default function RecentlyPlayedList(
    return (
     <>
       <div className="flex justify-between items-center">
-        <h1 className="px-2 text-2xl font-extrabold text-container-foreground tracking-tighter uppercase">New Releases</h1>
+        <h1 className="px-2 text-2xl font-extrabold text-container-foreground tracking-tighter uppercase">New Releases For You</h1>
       </div>
       {/* Scrollable grid container */}
       <div className="h-[90%] overflow-y-auto px-2">

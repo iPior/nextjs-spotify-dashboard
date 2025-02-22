@@ -9,7 +9,7 @@ export default function RecentlyPlayedButtonGroup({ page, setPage }: ChildProps)
   const btnClass: string = "font-bold text-container-foreground py-1 px-2 rounded ml-1 border"
 
   return (
-    <div className="flex flex-col xl:flex-row justify-between items-center">
+    <div className="flex flex-col sm:flex-row mb-2 justify-between items-center">
       <h1 className="px-1 text-2xl text-container-foreground font-extrabold tracking-tight uppercase ">Recently Played</h1>
       <div className="text-xs h-full flex items-center">
         <button 
