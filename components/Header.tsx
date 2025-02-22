@@ -7,10 +7,10 @@ export default async function Header() {
   const session = await getServerSession()
   
   return (
-    <header className='flex justify-between items-center p-1'>
+    <header className='flex flex-wrap items-center justify-center xs:justify-between px-1 py-4 lg:p-1'>
 
         {session &&
-        <div className='flex h-full items-center'>
+        <div className='flex items-center justify-center mb-2 xs:justify-start xs:mb-0 w-full xs:w-auto'>
            <img 
             src={session?.user.image}
             className="aspect-square h-12 rounded mr-2 border border-card-border"  
@@ -26,7 +26,7 @@ export default async function Header() {
         </div>
         }
         {!session && <div></div>}
-        <div className='flex'>
+        <div className='flex items-center justify-center w-full xs:w-auto xs:justify-end'>
           <ThemeToggle />
           {session && <SignOutButton />}
         </div>

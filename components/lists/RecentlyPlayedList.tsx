@@ -31,27 +31,31 @@ export default function RecentlyPlayedList(
    return (
       <>
         <RecentlyPlayedButtonGroup page={page} setPage={setPage} />
-        <div className="lg:h-5/6 w-full grid grid-cols-2 lg:flex text-center overflow-x-scroll pb-2">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={page}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="flex"
-            >
-              {trackList?.map((track, index) => (
-                <RecentlyPlayedCard
-                key={index}
-                index={index+1}
-                image={track.album.images[0].url as string}
-                name={track?.name}
-                artist={track?.artists[0].name}
-                />
-              ))}
-            </motion.div>
-          </AnimatePresence>
+        <div className="lg:h-5/6 w-full text-center overflow-y-auto pb-2">
+          <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={page}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="flex"
+              >
+                {trackList?.map((track, index) => (
+                  <div key={`${track.id}-${index}`} className="col-span-1">
+                    <RecentlyPlayedCard
+                    key={index}
+                    index={index+1}
+                    image={track.album.images[0].url as string}
+                    name={track?.name}
+                    artist={track?.artists[0].name}
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </>
    ) 

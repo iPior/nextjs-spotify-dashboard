@@ -29,6 +29,7 @@
   --color-container-foreground: var(--color-slate-950);
 
   --text-xxs: 0.65rem;
+  --breakpoint-xs: 500px;
 }
 
 @layer theme {

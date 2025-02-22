@@ -22,22 +22,22 @@ export default function DashboardLayout({
   return (
     <>
       <div 
-        className="h-full flex flex-wrap lg:flex-row w-[90%] mx-auto"
+        className="h-full flex flex-wrap lg:flex-row mx-auto"
       >
-        <div className="h-[500px] w-full lg:w-2/11 lg:h-full">
-          <div className="w-full h-full p-1">
+        <div className="w-full lg:w-2/11 lg:h-full">
+          <div className="w-full h-1/2 p-1">
             {newreleases}
           </div>
         </div>
-        <div className=" h-[500px] w-full lg:w-9/11 lg:h-full">
-          <div className="lg:h-1/3 w-full p-1">
+        <div className=" w-full lg:w-9/11 lg:h-full">
+          <div className="h-1/2 lg:h-1/3 w-full p-1">
             {recentlyplayed}
           </div>
           <div className="flex flex-col lg:flex-row lg:h-2/3 lg:w-full">
-            <div className="w-full h-[500px] lg:h-full lg:w-1/2 p-1">
+            <div className="w-full h-1/2 lg:h-full lg:w-1/2 p-1">
               {toptracks}
             </div>
-            <div className="w-full h-[500px] lg:h-full lg:w-1/2 p-1">
+            <div className="w-full h-1/2 lg:h-full lg:w-1/2 p-1">
               {topartists}
             </div>
           </div>

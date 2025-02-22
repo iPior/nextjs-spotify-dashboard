@@ -35,7 +35,6 @@ export default function RootLayout({
           bg-[size:14px_24px] 
           [mask-image:radial-gradient(ellipse_55%_55%_at_50%_50%,#000_70%,transparent_100%)]"></div>
 
-          <div className="h-full w-full lg:w-8/12 mx-auto flex flex-col justify-center"> 
             <ThemeProvider
               attribute="class"
               defaultTheme="system"
@@ -43,14 +42,15 @@ export default function RootLayout({
               disableTransitionOnChange
             >
               <AuthProvider>
-                <Header/>
-                <div className="h-full lg:h-5/6">
-                  {children}
+                <div className="h-full w-[90%] lg:w-8/12 mx-auto flex flex-col"> 
+                  <Header/>
+                  <div className="h-full lg:h-5/6">
+                    {children}
+                  </div>
+                  <Footer />
                 </div>
-                <Footer />
               </AuthProvider>
             </ThemeProvider>
-          </div>
       </body>
     </html>
   )
