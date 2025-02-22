@@ -24,12 +24,12 @@ export default function DashboardLayout({
       <div 
         className="h-full flex flex-wrap lg:flex-row w-[90%] mx-auto"
       >
-        <div className="h-[300px] w-full lg:w-2/11 lg:h-full">
+        <div className="h-[500px] w-full lg:w-2/11 lg:h-full">
           <div className="w-full h-full p-1">
             {newreleases}
           </div>
         </div>
-        <div className=" h-[300px] w-full lg:w-9/11 lg:h-full">
+        <div className=" h-[500px] w-full lg:w-9/11 lg:h-full">
           <div className="lg:h-1/3 w-full p-1">
             {recentlyplayed}
           </div>

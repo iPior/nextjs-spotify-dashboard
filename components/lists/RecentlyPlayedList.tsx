@@ -31,7 +31,7 @@ export default function RecentlyPlayedList(
    return (
       <>
         <RecentlyPlayedButtonGroup page={page} setPage={setPage} />
-        <div className="h-5/6 w-full flex text-center overflow-x-scroll pb-2">
+        <div className="lg:h-5/6 w-full grid grid-cols-2 lg:flex text-center overflow-x-scroll pb-2">
           <AnimatePresence mode="wait">
             <motion.div
               key={page}

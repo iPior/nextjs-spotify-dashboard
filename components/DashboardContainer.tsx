@@ -10,7 +10,7 @@ export default function DashboardContainer({
   }>) {
     return (
       <div
-          className={cn('h-full w-full p-4 rounded backdrop-blur-xs bg-container/10 border container', className)}
+          className={cn('h-full w-full p-4  rounded-4xl lg:rounded backdrop-blur-xs bg-container/10 border container', className)}
           >
           <Suspense 
             fallback={ <LoadingScreen />}

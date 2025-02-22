@@ -44,7 +44,7 @@ export default function RootLayout({
             >
               <AuthProvider>
                 <Header/>
-                <div className="h-5/6">
+                <div className="h-full lg:h-5/6">
                   {children}
                 </div>
                 <Footer />
