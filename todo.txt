@@ -11,7 +11,7 @@ Todo:
   - check new releases every day
 
 style
-- responsive design
+- responsive design in containers
 
 to logout compeltely, the user can be redirected to  https://www.spotify.com/en/logout
 

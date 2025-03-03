@@ -34,14 +34,14 @@ export default function RecentlyPlayedList(
 
    return (
     <>
-      <div className="flex justify-between items-center">
-        <h1 className="px-2 text-2xl font-extrabold text-container-foreground tracking-tighter uppercase">New Releases For You</h1>
+      <div className="h-[15%] lg:h-[10%] flex lg:justify-center justify-between items-center pb-2">
+        <h1 className="text-2xl font-extrabold text-container-foreground tracking-tight uppercase">New Releases</h1>
       </div>
       {/* Scrollable grid container */}
-      <div className="h-[90%] overflow-y-auto px-2">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-1 gap-3">
+      <div className="lg:h-[90%] flex lg:justify-center overflow-y-auto pb-2">
+        <div className="grid gap-1 grid-flow-col lg:grid-flow-row">
           {albums?.map((album, index) => (
-            <div key={album.id} className="col-span-1">
+            // <div key={album.id} className="container">
               <NewReleaseCard
                 index={index + 1}
                 image={album?.images[0].url as string}
@@ -50,7 +50,7 @@ export default function RecentlyPlayedList(
                 type={album.album_type}
                 release_date={album.release_date}
               />
-            </div>
+            // {/* </div> */}
           ))}
         </div>
       </div>

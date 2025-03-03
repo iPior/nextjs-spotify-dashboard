@@ -30,6 +30,7 @@
 
   --text-xxs: 0.65rem;
   --breakpoint-xs: 500px;
+  --breakpoint-2xl: 1350px;
 }
 
 @layer theme {

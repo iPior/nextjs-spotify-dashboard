@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${font.className} min-h-screen w-screen antialiased bg-background text-foreground relative`}>
+      <body className={`${font.className} h-screen w-screen antialiased bg-background text-foreground relative`}>
         <div className="absolute z-[-10] bottom-0 left-0 right-0 top-0 
           bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)]
           dark:bg-[linear-gradient(to_right,#0E1321_1px,transparent_1px),linear-gradient(to_bottom,#0E1321_1px,transparent_1px)]
@@ -43,7 +43,7 @@ export default function RootLayout({
           <AuthProvider>
             <div className="h-full w-[90%] lg:w-10/12 xl:w-8/11 mx-auto flex flex-col"> 
               <Header/>
-              <main className="">
+              <main className="lg:h-5/6">
                 {children}
               </main>
               <Footer />
