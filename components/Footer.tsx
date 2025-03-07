@@ -5,14 +5,14 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export default function Footer(){
   return (
-    <footer className='flex flex-row justify-center px-1 py-4 lg:p-1'>
+    <footer className='h-1/12 flex flex-row justify-center px-1 pt-2 pb-4'>
       <div className=" flex justify-center  items-center">
-          <a href='' target="_blank" className='mr-8 hover:text-accent hover:font-bold hover:cursor-pointer'>
+          <a href='' target="_blank" className='mr-8 hover:text-accent hover:font-bold hover:cursor-pointer text-lg'>
             <FontAwesomeIcon icon={faGithub} className='mr-1 ' />
             My Github
           </a>
       </div>
-      <div className="flex justify-center items-center hover:text-accent hover:font-bold hover:cursor-pointer">
+      <div className="flex justify-center items-center hover:text-accent hover:font-bold hover:cursor-pointer text-lg">
         <a href='' target="_blank" className='ml-8'>
           <FontAwesomeIcon icon={faCode} className='mr-1 font-bold' />
           Source Code

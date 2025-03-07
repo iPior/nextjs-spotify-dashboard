@@ -20,27 +20,26 @@ export default function DashboardLayout({
 
  
   return (
-    <>
-      <div 
-        className="h-full w-full flex flex-col lg:flex-row mx-auto"
-      >
-        <div className="h-[33vh] md:h-[33vh] w-full lg:w-3/12 xl:w-2/11 lg:h-full p-1">
-            {newreleases}
+    <div 
+      className="h-full w-full flex flex-col lg:flex-row mx-auto"
+    >
+      <div className="h-auto w-full lg:w-3/12 xl:w-1/4 3xl:w-[20%]! lg:h-full p-1">
+          {newreleases}
+      </div>
+      <div className="w-full lg:w-9/12 xl:w-3/4 3xl:w-[80%]! lg:h-full">
+        <div className="h-auto lg:h-1/3 p-1">
+          {recentlyplayed}
         </div>
-        <div className="w-full lg:w-9/12 xl:w-9/11 lg:h-full">
-          <div className="h-[33vh] lg:h-1/3 p-1">
-            {recentlyplayed}
+        <div className="flex flex-col md:flex-row  md:h-[66vh] lg:h-2/3">
+          <div className="md:w-1/2 h-[450px] md:h-full p-1">
+            {toptracks}
           </div>
-          <div className="flex flex-col md:flex-row  md:h-[66vh] lg:h-2/3">
-            <div className="md:w-1/2 h-[450px] md:h-full p-1">
-              {toptracks}
-            </div>
-            <div className="md:w-1/2 h-[33vh] md:h-full p-1">
-              {topartists}
-            </div>
+          <div className="md:w-1/2 h-[450px] md:h-full p-1">
+            {topartists}
           </div>
         </div>
       </div>
-    </>
+    </div>
+
   );
 }

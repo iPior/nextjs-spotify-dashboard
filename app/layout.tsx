@@ -41,9 +41,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AuthProvider>
-            <div className="h-full w-[90%] lg:w-10/12 xl:w-8/11 mx-auto flex flex-col"> 
+            <div className="h-full w-[90%] lg:w-10/12 xl:w-8/11 mx-auto flex flex-col justify-between"> 
               <Header/>
-              <main className="lg:h-5/6">
+              <main className="lg:h-5/6 w-full">
                 {children}
               </main>
               <Footer />

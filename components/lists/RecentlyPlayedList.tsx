@@ -31,7 +31,7 @@ export default function RecentlyPlayedList(
    return (
       <>
         <RecentlyPlayedButtonGroup page={page} setPage={setPage} />
-        <div className="w-full text-center overflow-x-auto pb-2">
+        <div className="w-full h-4/5 text-center overflow-x-auto pb-2">
             <AnimatePresence mode="wait">
               <motion.div
                 key={page}
@@ -39,16 +39,16 @@ export default function RecentlyPlayedList(
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="grid gap-1 grid-flow-col "
+                className="grid gap-1 grid-flow-col grid-rows-1 h-full"
               >
                 {trackList?.map((track, index) => (
+                  <div key={`${track.id}-${index}`}>
                     <RecentlyPlayedCard
-                    key={`${track.id}-${index}`}
-                    index={index+1}
-                    image={track.album.images[0].url as string}
-                    name={track?.name}
-                    artist={track?.artists[0].name}
+                      image={track.album.images[0].url as string}
+                      name={track?.name}
+                      artist={track?.artists[0].name}
                     />
+                  </div>
                 ))}
               </motion.div>
             </AnimatePresence>

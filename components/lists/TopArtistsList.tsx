@@ -45,7 +45,7 @@ export default function TopArtistsList(
   return (
     <>
       <ButtonTriplet header="Top Artists" term={term} setTerm={setTerm}/>
-      <div className="h-[80%] sm:h-[85%] 2xl:h-[90%] flex flex-col w-full overflow-y-scroll" >
+      <div className="h-[80%] sm:h-[85%] 2xl:h-[90%]! flex flex-col w-full overflow-y-scroll" >
         <AnimatePresence mode="wait">
           <motion.div
             key={term}

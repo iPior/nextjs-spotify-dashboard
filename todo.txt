@@ -9,9 +9,10 @@ Todo:
   - check top artists every day
   - check recently played every refresh
   - check new releases every day
+- key error in recently played list
 
 style
-- responsive design in containers
+- responsive design in recently played container, specifically the height
 
 to logout compeltely, the user can be redirected to  https://www.spotify.com/en/logout
 
