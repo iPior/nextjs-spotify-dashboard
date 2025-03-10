@@ -5,7 +5,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 export default function Footer(){
   return (
-    <footer className='h-1/12 flex flex-row justify-center px-1 pt-2 pb-4'>
+    <footer className='lg:h-1/12 flex flex-row justify-center px-1 pt-2 pb-4'>
       <div className=" flex justify-center  items-center">
           <a href='' target="_blank" className='mr-8 hover:text-accent hover:font-bold hover:cursor-pointer text-lg'>
             <FontAwesomeIcon icon={faGithub} className='mr-1 ' />

@@ -7,7 +7,7 @@ export default function RecentlyPlayedCard({
   name,
 }:  cardProps){
   return (
-    <div className={cn('rounded bg-card border border-card-border group w-36 sm:w-44 lg:w-36 [@media(min-height:1200px)]:w-52', className)}>
+    <div className={cn('rounded bg-card border border-card-border group w-36 sm:w-44 lg:w-40 2xl:w-44! h-full', className)}>
       <img 
         src={image}
         alt={`Profile picture of ${name}`}

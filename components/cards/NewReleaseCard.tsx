@@ -17,8 +17,8 @@ export default function NewReleaseCard({
           className="rounded-t border-b border-card-border aspect-square "
         />
 
-        <div className="group/inner text-center">
-          <h2 className="text-lg truncate lg:whitespace-normal font-bold leading-none py-2 px-1 text-card-foreground group-hover/inner:text-accent transition duration-200">{name}</h2>
+        <div className="text-center">
+          <h2 className="text-lg truncate lg:whitespace-normal font-bold leading-none py-2 px-1 text-card-foreground group-hover:text-accent transition duration-200">{name}</h2>
           <h3 className="text-sm transition text-card-foreground duration-500 leading-2 mb-2">{artist}</h3>
         {/* <h3 className="text-sm transition text-card-foreground duration-500 leading-2 mb-2">{type}</h3> */}
         {/* <h3 className="text-sm transition text-card-foreground duration-500 leading-2 mb-2">{release_date}</h3> */}

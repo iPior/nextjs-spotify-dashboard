@@ -7,7 +7,7 @@ export default async function Header() {
   const session = await getServerSession()
   
   return (
-    <header className='flex flex-wrap items-center justify-center xs:justify-between px-1 pt-4 pb-2 h-1/12'>
+    <header className='flex flex-wrap items-center justify-center xs:justify-between px-1 pt-4 pb-2 lg:h-1/12'>
 
         {session &&
         <div className='flex items-center justify-center mb-2 xs:justify-start xs:mb-0 w-full xs:w-auto'>

@@ -29,9 +29,9 @@ export default function RecentlyPlayedList(
   }, [allTracks, page])
 
    return (
-      <>
+      <div className="h-full">
         <RecentlyPlayedButtonGroup page={page} setPage={setPage} />
-        <div className="w-full h-4/5 text-center overflow-x-auto pb-2">
+        <div className="w-full h-5/6 text-center overflow-x-auto pb-2">
             <AnimatePresence mode="wait">
               <motion.div
                 key={page}
@@ -53,6 +53,6 @@ export default function RecentlyPlayedList(
               </motion.div>
             </AnimatePresence>
         </div>
-      </>
+      </div>
    ) 
   }
