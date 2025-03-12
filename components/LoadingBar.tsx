@@ -1,10 +1,6 @@
-'use client'
-
-import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import DashboardContainer from "@/components/DashboardContainer";
 
-export default function LoadingScreen() {
+export default function LoadingBar() {
 
   return (
     <div className="w-full h-full p-1">
@@ -22,7 +18,7 @@ export default function LoadingScreen() {
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ duration: 2, ease: "easeInOut" }}
-              className="h-2 bg-green-500 rounded-full"
+              className="h-1 bg-accent rounded-full w-full"
               style={{ width: "300px" }}
             />
             <motion.div
@@ -31,13 +27,6 @@ export default function LoadingScreen() {
               transition={{ delay: 2, duration: 0.5 }}
               className="flex items-center gap-1"
             >
-              <span className="text-xl font-medium">Loading your dashboard</span>
-              <motion.span
-                animate={{ opacity: [0, 1, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                ...
-              </motion.span>
             </motion.div>
           </motion.div>
         </AnimatePresence>

@@ -1,6 +1,6 @@
 import { Suspense } from "react"
 import { cn } from "@/lib/utils";
-import LoadingScreen from "@/components/Loading";
+import LoadingScreen from "@/components/LoadingBar";
 export default function DashboardContainer({
     className,
     children,

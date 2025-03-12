@@ -1,9 +1,6 @@
 Todo:
-- Error pages
-- Default pages
-- loading page
+
 - Meta data
-- 2 second loading screen when loggin in
 - store data locally
   - check top tracks every day
   - check top artists every day
@@ -11,10 +8,6 @@ Todo:
   - check new releases every day
 
 style
-- mobile version login page
-- fix iPad pro
+- responsive design in recently played container, specifically the height
 
 to logout compeltely, the user can be redirected to  https://www.spotify.com/en/logout
-
-Questions:
-- Am I overdoing it by using client components for all my lists? I could easily just have @topartists include the client component and make that its own client component.x
