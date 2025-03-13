@@ -75,16 +75,15 @@ Open your browser and navigate to `http://localhost:3000` to view the applicatio
 Screenshots to come ...
 
 > Login Page <br/>
-![<Login Page>.](https://imgur.com/6TbKObH)
-<img src="https://imgur.com/6TbKObH" width="640" height="640" />
+![<Login Page>.](https://github.com/user-attachments/assets/c2994ab0-d6d4-4c81-b6c6-ab748b0b2f8f)
 
 > Dashboard <br/>
-![<Dashboard>.](https://www.dropbox.com/scl/fi/bg0w7x3katz0dr4w474r4/spotidash4.PNG?rlkey=7c6heh7a29nok7w2wa023essj&st=onr1chxo&dl=0)
+![<Dashboard>.](https://github.com/user-attachments/assets/6d44daf2-3e92-4296-a50c-08ee1c06b05b)
 
 > Responsive Design <br/>
-![<Responsive Design Phone>.](https://www.dropbox.com/scl/fi/kr6jhxrelnx1ka2oz56y2/spotidash5.PNG?rlkey=5mu677lhri6w9373innjd5vmp&st=du1ht4we&dl=0)
-![<Responsive Design Tablet>.](https://www.dropbox.com/scl/fi/fzlt38ghmjoa215kzce6e/spotidash6.PNG?rlkey=bghteid1obmyzotnlq8xrid75&st=s0a418uw&dl=0)
+![<Responsive Design Phone>.](https://github.com/user-attachments/assets/802e9daa-fd90-4849-b24a-4301ee0a3d97)
+![<Responsive Design Tablet>.](https://github.com/user-attachments/assets/414bcb0b-6822-4971-928b-25df1d3c4fcf)
 
 > Dark Mode <br/>
-![<Dark Mode Login Page>.](https://www.dropbox.com/scl/fi/zjn2g71gr28rthlhcy7qc/spotidash1.PNG?rlkey=yquvds7s9gh6wmbfsy3d4jp4a&st=tzng9w6b&dl=0)
-![<Dark Mode Dashboard>.](https://www.dropbox.com/scl/fi/yy6004epo9lkuv024rcxw/spotidash3.PNG?rlkey=7to35vvvyznk0pdbfv5sbiz1g&st=uotygfzu&dl=0)
+![<Dark Mode Login Page>.](https://github.com/user-attachments/assets/f6c12684-d177-4831-b09b-9725367f5d8c)
+![<Dark Mode Dashboard>.](https://github.com/user-attachments/assets/35976e79-6802-43c6-a1de-3517455a48f0)
