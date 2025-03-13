@@ -16,8 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Dashboard() {
-  const session = await getServerSession(authOptions)
-
+  const session = await getServerSession()
   if (!session) {
       redirect('/') 
   }
