@@ -76,7 +76,7 @@ Screenshots to come ...
 
 > Login Page <br/>
 ![<Login Page>.](https://imgur.com/6TbKObH)
-[Imgur](https://imgur.com/6TbKObH)
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/6TbKObH" data-context="false" ><a href="//imgur.com/a/6TbKObH"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 > Dashboard <br/>
 ![<Dashboard>.](https://www.dropbox.com/scl/fi/bg0w7x3katz0dr4w474r4/spotidash4.PNG?rlkey=7c6heh7a29nok7w2wa023essj&st=onr1chxo&dl=0)
