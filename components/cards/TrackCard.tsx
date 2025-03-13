@@ -15,6 +15,8 @@ export default function TrackCard({
       <div className="flex w-full rounded border border-card-border truncate group/inner bg-card">
         <Image 
           src={image}
+          height={640}
+          width={640}
           alt={`Profile picture of ${name}`}
           className="aspect-square w-1/5 rounded-l max-h-18 object-cover mr-2 border-r border-card-border"
         />

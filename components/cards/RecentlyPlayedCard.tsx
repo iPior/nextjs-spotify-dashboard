@@ -11,6 +11,8 @@ export default function RecentlyPlayedCard({
     <div className={cn('rounded bg-card border border-card-border group w-36 sm:w-44 lg:w-40 2xl:w-44! h-full', className)}>
       <Image 
         src={image}
+        height={640}
+        width={640}
         alt={`Profile picture of ${name}`}
         className="rounded-t border-b border-card-border w-full h-5/6"
       />

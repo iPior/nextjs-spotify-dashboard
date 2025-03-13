@@ -14,7 +14,9 @@ export default async function Header() {
           <div className='flex'>
             <Image 
               src={session?.user.image}
-              className="aspect-square h-12 rounded mr-2 border border-card-border" 
+              height={48}
+              width={48}
+              className="rounded mr-2 border border-card-border" 
               alt="Profile Picture"
             />
             <h1 className="text-4xl font-bold">

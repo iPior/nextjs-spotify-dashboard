@@ -17,8 +17,12 @@ export default function TopTracksList(
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
+
     const fetchTracks = async () => {
-      setIsLoading(true)
       const now = new Date();
       const lastTrackFetch = localStorage.getItem("lastTrackFetch");
       const storedShortTermTracks = localStorage.getItem("topTracksShortTerm");
@@ -29,7 +33,6 @@ export default function TopTracksList(
 
         if (hoursSinceLastFetch < 24) {
           setTracks(JSON.parse(storedShortTermTracks));
-          setIsLoading(false);
           return;
         }
       }
