@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-// import { authOptions } from "@/app/api/auth/[...nextauth]/options"
+import { authOptions } from "@/app/api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth/next"
 import { redirect } from "next/navigation"
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Dashboard() {
-  const session = await getServerSession()
+  const session = await getServerSession(authOptions)
   if (!session) {
       redirect('/') 
   }
