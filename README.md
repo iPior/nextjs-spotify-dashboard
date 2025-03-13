@@ -41,8 +41,8 @@ SpotiDash is a web application that provides users with a personalized dashboard
    ```
    SPOTIFY_CLIENT_ID
    SPOTIFY_CLIENT_SECRET
-   NEXTAUTH_URL=http://localhost:3000/
-   AUTH_SECRET="QaFSGMmRVpFMvVlgbSRQK6Hs201O0FTGh7GuqqyxBeQ=" # Added by `npx auth`. Read more: https://cli.authjs.devs
+   NEXTAUTH_URL=http://localhost:3000/api/auth
+   AUTH_SECRET # Added by `npx auth`. Read more: https://cli.authjs.devs
    ```
 
 ## Usage
