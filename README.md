@@ -76,7 +76,7 @@ Screenshots to come ...
 
 > Login Page <br/>
 ![<Login Page>.](https://imgur.com/6TbKObH)
-<img src="//imgur.com/a/6TbKObH" width="640" height="640" />
+<img src="https://imgur.com/6TbKObH" width="640" height="640" />
 
 > Dashboard <br/>
 ![<Dashboard>.](https://www.dropbox.com/scl/fi/bg0w7x3katz0dr4w474r4/spotidash4.PNG?rlkey=7c6heh7a29nok7w2wa023essj&st=onr1chxo&dl=0)
