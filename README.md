@@ -85,5 +85,5 @@ Screenshots to come ...
 ![<Responsive Design Tablet>.](https://www.dropbox.com/scl/fi/fzlt38ghmjoa215kzce6e/spotidash6.PNG?rlkey=bghteid1obmyzotnlq8xrid75&st=s0a418uw&dl=0)
 
 > Dark Mode <br/>
-![<Dark Mode Login Page>.](https://www.dropbox.com/scl/fi/zjn2g71gr28rthlhcy7qc/spotidash1.PNG?rlkey=yquvds7s9gh6wmbfsy3d4jp4a&st=4qc8dzgm&dl=0)
+![<Dark Mode Login Page>.](https://www.dropbox.com/scl/fi/zjn2g71gr28rthlhcy7qc/spotidash1.PNG?rlkey=yquvds7s9gh6wmbfsy3d4jp4a&st=tzng9w6b&dl=0)
 ![<Dark Mode Dashboard>.](https://www.dropbox.com/scl/fi/yy6004epo9lkuv024rcxw/spotidash3.PNG?rlkey=7to35vvvyznk0pdbfv5sbiz1g&st=uotygfzu&dl=0)
