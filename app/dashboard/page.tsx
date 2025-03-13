@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { authOptions } from "@/app/api/auth/[...nextauth]/options"
+// import { authOptions } from "@/app/api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth/next"
 import { redirect } from "next/navigation"
 
