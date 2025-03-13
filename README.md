@@ -8,6 +8,7 @@ SpotiDash is a web application that provides users with a personalized dashboard
 - [Installation](#installation)
 - [Usage](#usage)
 - [Deployment](#deployment)
+- [Screenshots](#screenshots)
 
 ## Technologies Used
 
@@ -15,6 +16,7 @@ SpotiDash is a web application that provides users with a personalized dashboard
 - **React**: A JavaScript library for building user interfaces.
 - **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
 - **Tailwind CSS**: A utility-first CSS framework for styling.
+- **SHADCN**: A popular and customizable component library
 - **Framer Motion**: A library for animations in React applications.
 - **Spotify API**: Used to fetch music data for the application.
 - **NextAuth.js**: Authentication for Next.js applications.
@@ -58,3 +60,7 @@ yarn dev
 ```
 
 Open your browser and navigate to `http://localhost:3000` to view the application.
+
+## Screenshots
+
+Screenshots to come ...
