@@ -1,11 +1,12 @@
 import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/options";
 import { redirect } from "next/navigation";
 import { SignInButton } from "@/components/buttons/SignInButton";
 import { ThemeToggle } from '@/components/ThemeToggle'
 
 
 export default async function Home() {
-  const session = await getServerSession()
+  const session = await getServerSession(authOptions)
   if (session) redirect("/dashboard");
 
   return (
