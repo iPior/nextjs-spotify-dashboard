@@ -1,8 +1,5 @@
 @import 'tailwindcss';
 
-/* @plugin 'tailwindcss-animate'; */
-/* @plugin 'tailwind-scrollbar'; */
-
 @variant dark (&:is(.dark *));
 
 @theme {
@@ -19,7 +16,7 @@
   --color-border: var(--color-stone-400);
 
   --color-accent: var(--color-green-600);
-  --color-accent-foreground: var(--color-slate-950); /* variable not used yet*/
+  --color-accent-foreground: var(--color-slate-950);
 
   --color-card: var(--color-gray-50);
   --color-card-border: var(--color-border);
@@ -47,14 +44,14 @@
 
     --color-border: var(--color-gray-600);
 
-    --color-accent-foreground: var(--color-slate-50); /* variable not used yet*/
+    --color-accent-foreground: var(--color-slate-50);
 
     --color-card: var(--color-slate-950);
     --color-card-border: var(--color-border);
     --color-card-foreground: var(--color-slate-50);
   
     --color-container: var(--color-white);
-    --color-container-foreground: var(--color-slate-50); /* variable not used yet*/
+    --color-container-foreground: var(--color-slate-50);
     
   }
 }
@@ -68,7 +65,6 @@
     border-color: var(--color-border, currentColor); /* default border color*/
   }
 }
-
 
 ::-webkit-scrollbar {
   width: 5px !important;
