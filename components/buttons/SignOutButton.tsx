@@ -1,13 +1,12 @@
 "use client";
 
 import { signOut } from "next-auth/react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { Button } from "@/components/shadcn-ui/button"
 
 export const SignOutButton = () => {
-  const router = useRouter();
-
-  // ALTERNATE LOG OUT METHOD
+  // ALTERNATE LOG OUT METHOD 
+  // const router = useRouter();
   // const handleSignOut = async () => {
   //   await signOut({ redirect: false }); // Clear NextAuth session
   //   router.push("/logout-redirect");

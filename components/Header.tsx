@@ -1,6 +1,7 @@
 import { SignOutButton } from './buttons/SignOutButton'
 import { getServerSession } from 'next-auth'
 import { ThemeToggle } from '@/components/ThemeToggle'
+import Image from 'next/image';
 
 
 export default async function Header() {
@@ -11,9 +12,10 @@ export default async function Header() {
       {session &&
         <div className='flex flex-wrap items-center justify-center xs:justify-between px-1 pt-4 pb-2 lg:h-1/12'>
           <div className='flex'>
-            <img 
-            src={session?.user.image}
-            className="aspect-square h-12 rounded mr-2 border border-card-border"  
+            <Image 
+              src={session?.user.image}
+              className="aspect-square h-12 rounded mr-2 border border-card-border" 
+              alt="Profile Picture"
             />
             <h1 className="text-4xl font-bold">
               <span>SpotiDash</span>

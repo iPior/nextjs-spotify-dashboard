@@ -82,41 +82,41 @@ export const authOptions: NextAuthOptions = {
 
 }
 
-async function refreshAccessToken(token: any) {
-  try {
-    const response = await fetch('https://accounts.spotify.com/api/token', {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': `Basic ${Buffer.from(`${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`).toString('base64')}`,
-      },
-      body: new URLSearchParams({
-        grant_type: 'refresh_token',
-        refresh_token: token.refreshToken,
-      }),
-      method: 'POST',
-    })
+// async function refreshAccessToken(token: any) {
+//   try {
+//     const response = await fetch('https://accounts.spotify.com/api/token', {
+//       headers: {
+//         'Content-Type': 'application/x-www-form-urlencoded',
+//         'Authorization': `Basic ${Buffer.from(`${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`).toString('base64')}`,
+//       },
+//       body: new URLSearchParams({
+//         grant_type: 'refresh_token',
+//         refresh_token: token.refreshToken,
+//       }),
+//       method: 'POST',
+//     })
 
-    const refreshedTokens = await response.json()
-    console.log('Refresh Token being used:', token.refreshToken)
+//     const refreshedTokens = await response.json()
+//     console.log('Refresh Token being used:', token.refreshToken)
 
-    if (!response.ok) {
-      throw refreshedTokens
-    }
+//     if (!response.ok) {
+//       throw refreshedTokens
+//     }
 
-    return {
-      ...token,
-      accessToken: refreshedTokens.access_token,
-      refreshToken: refreshedTokens.refresh_token,
-      expires_at: refreshedTokens.expires_at! * 1000
-    }
-  } catch (error) {
-    console.error('Error refreshing access token', error)
-    return {
-      ...token,
-      error: 'RefreshAccessTokenError',
-    }
-  }
-}
+//     return {
+//       ...token,
+//       accessToken: refreshedTokens.access_token,
+//       refreshToken: refreshedTokens.refresh_token,
+//       expires_at: refreshedTokens.expires_at! * 1000
+//     }
+//   } catch (error) {
+//     console.error('Error refreshing access token', error)
+//     return {
+//       ...token,
+//       error: 'RefreshAccessTokenError',
+//     }
+//   }
+// }
 
 
 // export default authOptions

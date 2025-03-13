@@ -1,5 +1,6 @@
 import { cardProps } from "@/types/types"
 import { cn } from "@/lib/utils"
+import Image from 'next/image';
 
 export default function RecentlyPlayedCard({
   className,
@@ -8,7 +9,7 @@ export default function RecentlyPlayedCard({
 }:  cardProps){
   return (
     <div className={cn('rounded bg-card border border-card-border group w-36 sm:w-44 lg:w-40 2xl:w-44! h-full', className)}>
-      <img 
+      <Image 
         src={image}
         alt={`Profile picture of ${name}`}
         className="rounded-t border-b border-card-border w-full h-5/6"

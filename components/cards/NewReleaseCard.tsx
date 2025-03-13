@@ -1,17 +1,18 @@
 import { cardProps } from "@/types/types"
 import { cn } from "@/lib/utils";
+import Image from 'next/image';
 
 export default function NewReleaseCard({
   className,
   image,
   name,
   artist,
-  type,
-  release_date
+  // type,
+  // release_date
 }:  cardProps){
   return (
     <div className={cn('rounded mb-2 border border-card-border bg-card group text-center w-36 sm:w-40 lg:w-full ', className)}>
-        <img 
+        <Image 
           src={image}
           alt={`Profile picture of ${name}`}
           className="rounded-t border-b border-card-border aspect-square "
