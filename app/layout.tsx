@@ -14,8 +14,18 @@ config.autoAddCss = false
 const font = Figtree({ subsets: ["latin"]});
 
 export const metadata: Metadata = {
-  title: "Spotify Dashboard",
-  description: "",
+  title: "SpotiDash",
+  description: "Sign into Spotidash to view your dashboard with top tracks, artists, and new releases.",
+  keywords: "dashboard, music, top tracks, top artists, new releases",
+  authors: [{ name: "Piotr Szaran"}],
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 
@@ -26,6 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={`${font.className} h-screen w-screen antialiased bg-background text-foreground`}>
         <div className="fixed inset-0 z-[-10]
           bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)]

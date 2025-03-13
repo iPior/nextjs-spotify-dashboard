@@ -44,7 +44,6 @@ async function getAlbumsFromArtistSearch(
   return spotifyGet(url,session).then(data => data?.items)
 }
 
-
 async function getArtistsFromUser(
   session: Session
 ): Promise<Array<SpotifyArtist>>{
@@ -52,33 +51,35 @@ async function getArtistsFromUser(
   return spotifyGet(url,session).then(data => data?.artists?.items)
 }
 
-
 export async function getRecentReleases(artistIds: Array<SpotifyArtist>, session: Session) {
   const customPastDate = new Date();
-  customPastDate.setDate(customPastDate.getDate() - 14); //new Releases in the past month
+  customPastDate.setDate(customPastDate.getDate() - 14); // New Releases in the past 14 days
+
+  const requests = artistIds.map(artistId => getAlbumsFromArtistSearch(artistId.id, session));
 
   try {
-    const requests = artistIds.map(artistId =>
-      getAlbumsFromArtistSearch(artistId.id, session)
-    );
-    const responses = await Promise.all(requests); // Wait for all API calls to complete
+    const responses = await Promise.allSettled(requests); // Wait for all API calls to complete
+
     // Extract and filter recent releases
     const allRecentReleases = responses
-      .filter(Boolean) // Remove null/undefined responses
-      .flatMap(data =>
-      data?.filter(item => {
-        if (!item || !item.release_date || !item.album_type) return false;
-        if (item.release_date_precision !== "day") return false;
-        return new Date(item.release_date) >= customPastDate;
-      })
-    );
+      .filter(response => response.status === 'fulfilled') // Only keep fulfilled responses
+      .flatMap(response => {
+        const data = response.value; // Get the value of the fulfilled promise
+        return data?.filter(item => isRecentRelease(item, customPastDate)) || [];
+      });
 
     return allRecentReleases;
 
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching recent releases:", error);
     return [];
   }
+}
+
+function isRecentRelease(item: SpotifyAlbum, customPastDate: Date): boolean {
+  if (!item || !item.release_date || !item.album_type) return false;
+  if (item.release_date_precision !== "day") return false;
+  return new Date(item.release_date) >= customPastDate;
 }
 
 export async function getNewReleasesFromArtists(
@@ -87,18 +88,3 @@ export async function getNewReleasesFromArtists(
   const artists = await getArtistsFromUser(session)
   return getRecentReleases(artists, session);
 }
-
-
-// export async function getNewReleasesFromArtist(
-//   session: Session
-// ): Promise<Array<SpotifyAlbum>>{
-//   // first find artist ID
-
-//   // then find albums by artist ID
-
-//   // then filter the data by date
-
-//   // return data
-//   const url: string = "https://api.spotify.com/v1/browse/new-releases?limit=20"
-//   return spotifyGet(url,session).then(data => data.albums?.items)
-// }

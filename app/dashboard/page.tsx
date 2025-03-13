@@ -13,14 +13,6 @@ export const metadata: Metadata = {
   description: "View your dashboard with top tracks, artists, and new releases.",
   keywords: "dashboard, music, top tracks, top artists, new releases",
   authors: [{ name: "Piotr Szaran"}],
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
-
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
 };
 
 export default async function Dashboard() {

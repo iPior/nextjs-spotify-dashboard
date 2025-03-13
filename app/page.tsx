@@ -1,24 +1,9 @@
-import { Metadata } from 'next';
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/options";
 import { redirect } from "next/navigation";
 import { SignInButton } from "@/components/buttons/SignInButton";
 import { ThemeToggle } from '@/components/ThemeToggle'
 
-export const metadata: Metadata = {
-  title: "SpotiDash",
-  description: "Sign into Spotidash to view your dashboard with top tracks, artists, and new releases.",
-  keywords: "dashboard, music, top tracks, top artists, new releases",
-  authors: [{ name: "Piotr Szaran"}],
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
-
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-};
 
 export default async function Home() {
   const session = await getServerSession(authOptions)

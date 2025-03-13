@@ -18,12 +18,12 @@ export default function RecentlyPlayedList(
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const getTracks = async () => {
-      setIsLoading(true)
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 1500)
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
 
+    const getTracks = async () => {
       try {
         const tracksData = await getRecentlyPlayed(session)
         setAllTracks(tracksData)
@@ -32,17 +32,17 @@ export default function RecentlyPlayedList(
       }
     }
     getTracks()
-  }, [])
+  }, [session])
 
    useEffect(() => {
     const subList = allTracks?.slice((page-1)*10,(page*10))
     setTrackList(subList)
   }, [allTracks, page])
 
-   return (
+  return (
     <DashboardContainer>
       <RecentlyPlayedButtonGroup page={page} setPage={setPage} />
-      <div className="w-full h-5/6 text-center overflow-x-auto pb-2">
+      <div className="w-full h-5/6 text-center overflow-x-auto pb-1">
         {isLoading ? (
           <LoadingScreen />
         ) : (
@@ -68,5 +68,5 @@ export default function RecentlyPlayedList(
         )}
       </div>
     </DashboardContainer>
-   ) 
-  }
+  )
+}

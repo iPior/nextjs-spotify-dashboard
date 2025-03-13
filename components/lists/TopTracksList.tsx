@@ -13,45 +13,68 @@ export default function TopTracksList(
   { session }: AuthSession
 ) {
   const [tracks, setTracks] = useState<Array<SpotifyTrack>>([])
-  const [shortTermTracks, setShortTermTracks] = useState<Array<SpotifyTrack>>([])
-  const [mediumTermTracks, setMediumTermTracks] = useState<Array<SpotifyTrack>>([])
-  const [longTermTracks, setLongTermTracks] = useState<Array<SpotifyTrack>>([])
   const [term, setTerm] = useState<string>("short_term")
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    try {
-      setIsLoading(true)
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 1500)
-      const getShortTermTracks = async () => {
-        const tracksData = await getTopTracks("short_term", session)
-        setShortTermTracks(tracksData)
-        setTracks(tracksData) // initial data to start with short_term tracks
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
+    
+    const fetchTracks = async () => {
+      const now = new Date();
+      const lastTrackFetch = localStorage.getItem("lastTrackFetch");
+      const storedShortTermTracks = localStorage.getItem("topTracksShortTerm");
+
+      if (lastTrackFetch && storedShortTermTracks) {
+        const lastFetchDate = new Date(lastTrackFetch);
+        const hoursSinceLastFetch = (now.getTime() - lastFetchDate.getTime()) / (1000 * 60 * 60);
+
+        if (hoursSinceLastFetch < 24) {
+          setTracks(JSON.parse(storedShortTermTracks));
+          return;
+        }
       }
-      const getMediumTermTracks = async () => {
-        const tracksData = await getTopTracks("medium_term", session)
-        setMediumTermTracks(tracksData)
+
+      // Fetch new data from API
+      try {
+        const shortTermTracksData = await getTopTracks("short_term", session);
+        const mediumTermTracksData = await getTopTracks("medium_term", session);
+        const longTermTracksData = await getTopTracks("long_term", session);
+
+        localStorage.setItem("topTracksShortTerm", JSON.stringify(shortTermTracksData));
+        localStorage.setItem("topTracksMediumTerm", JSON.stringify(mediumTermTracksData));
+        localStorage.setItem("topTracksLongTerm", JSON.stringify(longTermTracksData));
+        localStorage.setItem("lastTrackFetch", now.toISOString());
+
+        setTracks(shortTermTracksData);
+      } catch (error) {
+        console.error("Error fetching tracks:", error);
       }
-      const getLongTermTracks = async () => {
-        const tracksData = await getTopTracks("long_term", session)
-        setLongTermTracks(tracksData)
-      }
-      getShortTermTracks()
-      getMediumTermTracks()
-      getLongTermTracks()
-    }
-    catch (error) {
-      console.error("Error fetching tracks:", error)
-    }
-  }, [])
+    };
+
+    fetchTracks();
+  }, [session]);
 
   useEffect(() => {
-    if (term === "short_term") setTracks(shortTermTracks);
-    else if (term === "medium_term") setTracks(mediumTermTracks);
-    else setTracks(longTermTracks) ;
-  }, [term])
+    if (term === "short_term") {
+      const storedTracks = localStorage.getItem("topTracksShortTerm");
+      if (storedTracks) {
+        setTracks(JSON.parse(storedTracks));
+      }
+    } else if (term === "medium_term") {
+      const storedTracks = localStorage.getItem("topTracksMediumTerm");
+      if (storedTracks) {
+        setTracks(JSON.parse(storedTracks));
+      }
+    } else if (term === "long_term") {
+      const storedTracks = localStorage.getItem("topTracksLongTerm");
+      if (storedTracks) {
+        setTracks(JSON.parse(storedTracks));
+      }
+    }
+  }, [term]);
 
   return (
     <DashboardContainer>

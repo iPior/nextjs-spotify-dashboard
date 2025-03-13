@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+// ALTERNATE LOG OUT METHOD
 const LogoutRedirect = () => {
   const router = useRouter();
   window.location.href = `https://www.spotify.com/fr/logout`;

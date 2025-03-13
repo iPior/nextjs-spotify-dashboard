@@ -1,21 +1,53 @@
-## Getting Started
+# SpotiDash
 
-First, run the development server:
+SpotiDash is a web application that provides users with a personalized dashboard for exploring their favorite music on Spotify. Leveraging the Spotify API, SpotiDash allows users to view their top tracks, artists, and new releases, all in one place. The application features a sleek and responsive design built with Next.js and styled using Tailwind CSS, ensuring a smooth user experience across devices. With authentication handled by NextAuth.js, users can securely log in and access their music data effortlessly. Enjoy discovering and managing your music preferences with SpotiDash!
+
+## Table of Contents
+
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployment](#deployment)
+
+## Technologies Used
+
+- **Next.js**: A React framework for building server-side rendered applications.
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **Framer Motion**: A library for animations in React applications.
+- **Spotify API**: Used to fetch music data for the application.
+- **NextAuth.js**: Authentication for Next.js applications.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd your-repo-name
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+   or
+   ```bash
+   yarn install
+   ```
+
+## Usage
+
+To run the development server, use the following command:
 
 ```bash
 npm run dev
-# or
+```
+or
+```bash
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open your browser and navigate to `http://localhost:3000` to view the application.

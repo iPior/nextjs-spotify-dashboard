@@ -13,47 +13,68 @@ export default function TopArtistsList(
  { session }: AuthSession
 ) {
   const [artists, setArtists] = useState<Array<SpotifyArtist>>([])
-  const [shortTermArtists, setShortTermArtists] = useState<Array<SpotifyArtist>>([])
-  const [mediumTermArtists, setMediumTermArtists] = useState<Array<SpotifyArtist>>([])
-  const [longTermArtists, setLongTermArtists] = useState<Array<SpotifyArtist>>([])
   const [term, setTerm] = useState<string>("short_term")
   const [isLoading, setIsLoading] = useState(true)
   
-  // Prerender all the initial data when the component mounts
   useEffect(() => {
-    try {
-      setIsLoading(true)
-      setTimeout(() => {
-        setIsLoading(false)
-      }, 1500)
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
 
-      const getArtistsShortTerm = async () => {
-        const artistsData = await getTopArtists("short_term", session)
-        setShortTermArtists(artistsData)
-        setArtists(artistsData) // initial data to start with short_term 
+    const fetchArtists = async () => {
+      const now = new Date();
+      const lastArtistFetch = localStorage.getItem("lastTrackFetch");
+      const storedShortTermArtists = localStorage.getItem("topArtistsShortTerm");
+
+      if (lastArtistFetch && storedShortTermArtists) {
+        const lastFetchDate = new Date(lastArtistFetch);
+        const hoursSinceLastFetch = (now.getTime() - lastFetchDate.getTime()) / (1000 * 60 * 60);
+
+        if (hoursSinceLastFetch < 24) {
+          setArtists(JSON.parse(storedShortTermArtists));
+          return;
+        }
       }
-      const getArtistsMediumTerm = async () => {
-        const artistsData = await getTopArtists("medium_term", session)
-        setMediumTermArtists(artistsData)
+
+      // Fetch new data from API
+      try {
+        const shortTermArtistsData = await getTopArtists("short_term", session);
+        const mediumTermArtistsData = await getTopArtists("medium_term", session);
+        const longTermArtistsData = await getTopArtists("long_term", session);
+
+        localStorage.setItem("topArtistsShortTerm", JSON.stringify(shortTermArtistsData));
+        localStorage.setItem("topArtistsMediumTerm", JSON.stringify(mediumTermArtistsData));
+        localStorage.setItem("topArtistsLongTerm", JSON.stringify(longTermArtistsData));
+        localStorage.setItem("lastArtistFetch", now.toISOString());
+        
+        setArtists(shortTermArtistsData);
+      } catch (error) {
+        console.error("Error fetching artists:", error);
       }
-      const getArtistsLongTerm = async () => {
-        const artistsData = await getTopArtists("long_term", session)
-        setLongTermArtists(artistsData)
-      }
-      getArtistsShortTerm()
-      getArtistsMediumTerm()
-      getArtistsLongTerm()
-    }
-    catch (error) {
-      console.error("Error fetching artists:", error)
-    }
-  }, [])
+    };
+
+    fetchArtists();
+  }, [session]);
 
   useEffect(() => {
-    if (term === "short_term") setArtists(shortTermArtists);
-    else if (term === "medium_term") setArtists(mediumTermArtists);
-    else setArtists(longTermArtists) ;
-  }, [term])
+    if (term === "short_term") {
+      const storedArtists = localStorage.getItem("topArtistsShortTerm");
+      if (storedArtists) {
+        setArtists(JSON.parse(storedArtists));
+      }
+    } else if (term === "medium_term") {
+      const storedArtists = localStorage.getItem("topArtistsMediumTerm");
+      if (storedArtists) {
+        setArtists(JSON.parse(storedArtists));
+      }
+    } else if (term === "long_term") {
+      const storedArtists = localStorage.getItem("topArtistsLongTerm");
+      if (storedArtists) {
+        setArtists(JSON.parse(storedArtists));
+      }
+    }
+  }, [term]);
 
   return (
     <DashboardContainer>

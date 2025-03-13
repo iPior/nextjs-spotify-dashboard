@@ -1,12 +1,3 @@
-Todo:
-
-- Meta data
-- store data locally
-  - check top tracks every day
-  - check top artists every day
-  - check recently played every refresh
-  - check new releases every day
-
 style
 - responsive design in recently played container, specifically the height
 
