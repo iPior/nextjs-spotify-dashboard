@@ -75,7 +75,7 @@ Open your browser and navigate to `http://localhost:3000` to view the applicatio
 Screenshots to come ...
 
 > Login Page <br/>
-![<Login Page>.](https://www.dropbox.com/scl/fi/zjn2g71gr28rthlhcy7qc/spotidash1.PNG?rlkey=yquvds7s9gh6wmbfsy3d4jp4a&st=ojka3183&dl=0)
+![<Login Page>.](https://imgur.com/6TbKObH)
 
 > Dashboard <br/>
 ![<Dashboard>.](https://www.dropbox.com/scl/fi/bg0w7x3katz0dr4w474r4/spotidash4.PNG?rlkey=7c6heh7a29nok7w2wa023essj&st=onr1chxo&dl=0)
