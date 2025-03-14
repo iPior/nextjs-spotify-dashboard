@@ -29,6 +29,8 @@
   --breakpoint-xs: 500px;
   --breakpoint-2xl: 1350px;
   --breakpoint-3xl: 1500px;
+  --breakpoint-4xl: 2048px;
+  --wide-tall: {'raw': '(min-width: 1024px) and (min-height: 800px)'}
 }
 
 @layer theme {

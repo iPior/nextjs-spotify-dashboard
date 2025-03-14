@@ -27,10 +27,10 @@ export default async function Dashboard() {
           <NewReleaseList session={session} />
       </div>
       <div className="w-full lg:w-9/12 xl:w-3/4 3xl:w-[80%]! lg:h-full">
-        <div className="h-auto lg:h-1/3 p-1">
+        <div className="h-auto lg:h-1/3 4xl:h-1/4! p-1">
           <RecentlyPlayedList session={session} />
         </div>
-        <div className="flex flex-col md:flex-row  md:h-[66vh] lg:h-2/3">
+        <div className="flex flex-col md:flex-row  md:h-[66vh] lg:h-2/3 4xl:h-3/4!">
           <div className="md:w-1/2 h-[450px] md:h-full p-1">
             <TopTracksList session={session} />
           </div>

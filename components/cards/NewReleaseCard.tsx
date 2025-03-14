@@ -11,7 +11,7 @@ export default function NewReleaseCard({
   // release_date
 }:  cardProps){
   return (
-    <div className={cn('rounded mb-2 border border-card-border bg-card group text-center w-36 sm:w-40 lg:w-full ', className)}>
+    <div className={cn('rounded mb-2 border border-card-border bg-card group text-center w-36 sm:w-40 lg:w-full', className)}>
       <div className="w-full"> 
         <Image 
           src={image}
