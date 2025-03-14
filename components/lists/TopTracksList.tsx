@@ -81,7 +81,7 @@ export default function TopTracksList(
   return (
     <DashboardContainer>
       <ButtonTriplet header="Top Tracks" term={term} setTerm={setTerm}/>
-      <div className="h-[80%] sm:h-[85%] 2xl:h-[90%]! 4xl:h-[95%]! flex flex-col w-full overflow-y-scroll ">
+      <div className="h-[80%] sm:h-[85%] 3xl:h-[90%]! 4xl:h-[95%]! flex flex-col w-full overflow-y-scroll ">
         {isLoading ? (
           <LoadingScreen />
         ) : (
