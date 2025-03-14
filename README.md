@@ -2,6 +2,8 @@
 
 SpotiDash is a web application that provides users with a personalized dashboard for exploring their favorite music on Spotify. Leveraging the Spotify API, SpotiDash allows users to view their top tracks, artists, and new releases, all in one place. The application features a sleek and responsive design built with Next.js and styled using Tailwind CSS, ensuring a smooth user experience across devices. With authentication handled by NextAuth.js, users can securely log in and access their music data effortlessly. Enjoy discovering and managing your music preferences with SpotiDash!
 
+The site is deployed and can be found at https://spotidash.vercel.app/. However, the Spotify API is in development mode and only users that I add to the user management can use the deployed site. If you wish to be added to the user managment group for a preview please message me.
+
 ## Table of Contents
 
 - [Technologies Used](#technologies-used)
